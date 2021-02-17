@@ -5,7 +5,7 @@ import image2 from './../../images/cat3.jpg'
 function Category(props){
     const [categoria,setCategoria] = useState([])
   useEffect(() => {
-    fetch("https://nabtastore.com.co/api-ma/Categorias/",{
+    fetch("https://www.nabtastore.com.co/api-ma/Categorias/",{
       method: 'GET',
       headers: {
         'Content-Type':'application/json',

@@ -9,7 +9,7 @@ export const mycontext = React.createContext()
 function App() {
  const [item,setItem] = useState([])
  useEffect(() => {
-   fetch("https://nabtastore.com.co/api-ma/Items/",{
+   fetch("https://www.nabtastore.com.co/api-ma/Items/",{
      method: 'GET',
      headers: {
        'Content-Type':'application/json',
