@@ -118,28 +118,28 @@ font-size: 12px;
 /* Image size on category*/
 .img-pro{
   width: 500px;
-  height: 120px;
+  height: 180px;
 }
 /* Category colors*/
 .main-cat{
   background-color: #b5d485;
-  width: 100px;
-  height:150px;
-  margin-right: 50px;
+  width: 200px;
+  height:200px;
+  margin-left: 50px;
 }
 .main-cat1{
   background-color: #f39aa6;
   width: 200px;
   height:200px;
  
- margin-right: 50px;
+  margin-left: 50px;
 }
 .main-cat2{
   background-color: #6fd0f4;
   width: 200px;
   height:200px;
  
- margin-right: 50px;
+  margin-left: 50px;
 }
 .titulos{
   font-family: Bree Serif;
