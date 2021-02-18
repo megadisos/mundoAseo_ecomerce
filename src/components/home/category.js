@@ -23,22 +23,22 @@ function Category(props){
               if(mc.id === 1){
                     return(
                         <div key={mc.id} className="col-lg-3 col-md-3 col-sm-12 main-cat mb-2">
-                            <img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
-                            <p className="text-center">{mc.get_name}</p>
+                            <center><img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
+                            <p className="text-center">{mc.get_name}</p></center>
                         </div>
                     )
             }else if (mc.id === 2){
                 return(
                 <div key={mc.id} className="col-lg-3 col-md-3 col-sm-12 main-cat1 mb-2">
-                <img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
-                <p className="text-center">{mc.get_name}</p>
+                <center><img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
+                <p className="text-center">{mc.get_name}</p></center>
             </div>
                 )
             }else {
                 return(
                 <div key={mc.id} className="col-lg-3 col-md-3 col-sm-12 main-cat2">
-                            <img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
-                            <p className="text-center">{mc.get_name}</p>
+                            <center><img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
+                            <p className="text-center">{mc.get_name}</p></center>
                         </div>
                         )
             }

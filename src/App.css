@@ -126,21 +126,21 @@ font-size: 12px;
   background-color: #b5d485;
   width: 200px;
   height:200px;
-  margin-left: 30px;
+  
 }
 .main-cat1{
   background-color: #f39aa6;
   width: 200px;
   height:200px;
  
-  margin-left: 30px;
+
 }
 .main-cat2{
   background-color: #6fd0f4;
   width: 200px;
   height:200px;
  
-  margin-left: 30px;
+ 
 }
 .titulos{
   font-family: Bree Serif;
@@ -156,7 +156,7 @@ font-size: 12px;
 .img-prods{
   height: 120px;
   width: 150px;
-  margin-left: 150px;
+ 
 }
 .in-div{
   background-color:#b5d485;
@@ -169,18 +169,18 @@ font-size: 12px;
 .img-prods{
   height: 120px;
   width: 100px;
-  margin-left: 15px;
+  
 }
 .precio{
   font-weight: bold;
   font-family:  Bree Serif;
   font-size: 13px;
-  margin-left: 140px;
+ 
 }
 .titulo{
   font-size: 9px;
   font-family:  Bree Serif;
-  margin-left: 140px;
+ 
 }
 .btn-cart{
   font-family:  Bree Serif;
@@ -190,7 +190,7 @@ font-size: 12px;
   background-color: #6fd0f4;
   color: black;
   border: none;
-  margin-left: 150px;
+ 
 }
 .btn-cart:hover{
   background-color: #f39aa6;

@@ -23,10 +23,10 @@ function Featured(props){
                 if (item.destacado === true){
                     return (
                         <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3">
-                            <img src={item.get_path}   onClick={()=> ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
+                            <center><img src={item.get_path}   onClick={()=> ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                             <p className="precio mt-1">${item.precio}</p>
                             <p className="titulo ">{item.titulo}</p>
-                            <button type="button" class="btn btn-primary btn-cart">Agregar al carrito</button>
+                            <button type="button" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
                             </div>
                     )
                 }
