@@ -99,6 +99,7 @@ font-size: 12px;
 .jumbotron{
   height: 200px;
   background-color: white;
+  margin-left: 20px;
 }
 .img-pr{
   margin-top: 5px;
@@ -155,7 +156,7 @@ font-size: 12px;
 .img-prods{
   height: 120px;
   width: 150px;
-  margin-left: 50px;
+  margin-left: 150px;
 }
 .in-div{
   background-color:#b5d485;
@@ -174,10 +175,12 @@ font-size: 12px;
   font-weight: bold;
   font-family:  Bree Serif;
   font-size: 13px;
+  margin-left: 140px;
 }
 .titulo{
   font-size: 9px;
   font-family:  Bree Serif;
+  margin-left: 140px;
 }
 .btn-cart{
   font-family:  Bree Serif;
@@ -187,6 +190,7 @@ font-size: 12px;
   background-color: #6fd0f4;
   color: black;
   border: none;
+  margin-left: 150px;
 }
 .btn-cart:hover{
   background-color: #f39aa6;
