@@ -47,7 +47,7 @@
   }
   .nav-menu{
     background-color: white;
-    margin-left: 10px;
+    margin-left: 0px;
   }
   .navbar-nav {
     margin-left: 10px;
@@ -123,20 +123,20 @@ font-size: 12px;
 /* Category colors*/
 .main-cat{
   background-color: #b5d485;
-  width: 50px;
+  width: 100px;
   height:150px;
   margin-right: 50px;
 }
 .main-cat1{
   background-color: #f39aa6;
-  width: 50px;
+  width: 100px;
   height:150px;
  
  margin-right: 50px;
 }
 .main-cat2{
   background-color: #6fd0f4;
-  width: 50px;
+  width: 100px;
   height:150px;
  
  margin-right: 50px;
