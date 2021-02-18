@@ -3,11 +3,11 @@ import image from './../../images/im1.jpg'
 function Brands(props){
   const [marca,setMarca] = useState([])
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api-ma/Marca/",{
+    fetch("https://www.nabtastore.com.co/api-ma/Marca/",{
       method: 'GET',
       headers: {
         'Content-Type':'application/json',
-        'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
+        'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
       }
     })
     .then( resp => resp.json())
