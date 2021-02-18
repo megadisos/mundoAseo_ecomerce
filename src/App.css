@@ -47,7 +47,7 @@
   }
   .nav-menu{
     background-color: white;
-    margin-left: 0px;
+    margin-left: -5px;
   }
   .navbar-nav {
     margin-left: 10px;
@@ -104,7 +104,7 @@ font-size: 12px;
 .img-pr{
   margin-top: 5px;
   width: 2000px;
-  height:130px;
+  height:150px;
   border: 2px solid #61dafb;
 }
 /* Categorias general */
@@ -126,20 +126,20 @@ font-size: 12px;
   background-color: #b5d485;
   width: 200px;
   height:200px;
-  margin-left:20px;
+  margin-left:40px;
 }
 .main-cat1{
   background-color: #f39aa6;
   width: 200px;
   height:200px;
-  margin-left:20px;
+  margin-left:40px;
 
 }
 .main-cat2{
   background-color: #6fd0f4;
   width: 200px;
   height:200px;
-  margin-left:20px;
+  margin-left:40px;
  
 }
 .titulos{

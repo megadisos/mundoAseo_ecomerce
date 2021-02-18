@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import logo from './../../images/logo.png'
+import menu from './../../images/menu.png'
 import  { Redirect, useHistory , useLocation} from 'react-router-dom'
 function Menu(props){
   const location = useLocation();
@@ -8,7 +9,7 @@ function Menu(props){
         <nav className="navbar nav-menu navbar-expand-lg navbar-expand-md ">
   <a className="navbar-brand" href="#"><img src={logo} className="img-fluid" width="200" height="80"></img></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"><img src={logo} className="img-fluid" width="20" height="20"></img></span>
+    <span className="navbar-toggler-icon"><img src={menu} className="img-fluid" width="40" height="40"></img></span>
   </button>
   <div className="navbar collapse navbar-collapse " id="navbarNavAltMarkup" >
     <div className="navbar-nav">
