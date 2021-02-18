@@ -8,7 +8,7 @@ function Menu(props){
         <nav className="navbar nav-menu navbar-expand-lg navbar-expand-md ">
   <a className="navbar-brand" href="#"><img src={logo} className="img-fluid" width="200" height="80"></img></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"></span>
+    <span className="navbar-toggler-icon"><img src={logo} className="img-fluid" width="20" height="20"></img></span>
   </button>
   <div className="navbar collapse navbar-collapse " id="navbarNavAltMarkup" >
     <div className="navbar-nav">
