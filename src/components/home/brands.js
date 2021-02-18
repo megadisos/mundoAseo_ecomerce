@@ -39,7 +39,7 @@ function Brands(props){
                       
                         <div key={mc.id} className="col-lg-2 ">
                       
-                            <img src={mc.get_path} className="img-fluid mt-2 img-prods" alt="Responsive image" />
+                            <center><img src={mc.get_path} className="img-fluid mt-2 img-prods" alt="Responsive image" /></center>
                             </div>
                     )
                 
