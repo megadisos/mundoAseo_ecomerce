@@ -39,6 +39,10 @@
 .body{
   font-family: Bree Serif;
 }
+.prd-name{
+  font-family: Bree Serif;
+}
+
 @media all and (min-width: 0px) and (max-width: 500px){
   .nav-header{
     height: 20px;
@@ -158,6 +162,7 @@ font-size: 12px;
   width: 150px;
  
 }
+
 .in-div{
   background-color:#b5d485;
   height: 2px;
@@ -223,6 +228,11 @@ font-size: 12px;
     background-color: #61dafb;
     font-family: Bree Serif;
   }
+  .img-box{
+    height: 250px;
+    border:1px solid #61dafb;
+    border-radius: 20px;
+  }
   .nav-menu{
     background-color: white;
     margin-left: 60px;
@@ -251,7 +261,15 @@ font-size: 12px;
     left:-300px;
     top: -10px;
   }
-
+  .prd_des{
+    font-family: Bree Serif;
+  }
+  .bt-pos{
+    position: relative;
+    top:40px;
+    left: -100px;
+    
+  }
 /* Buscador */
 .input{
   font-size: 10px;
@@ -339,6 +357,10 @@ font-size: 12px;
   width: 150px;
   margin-left: 15px;
 }
+.img-det{
+  width: 100%;
+  height: 220px;
+}
 .in-div{
   background-color:#b5d485;
   height: 2px;
@@ -394,6 +416,39 @@ font-size: 12px;
 .map{
   width: 100%;
 }
+.prd-pre{
+  font-family: Bree Serif;
+  font-size: 20px;
+}
+
+
+.btn-danger{
+  width: 25px;
+  height: 30px;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 7px;
+  border-radius: 5px;
+  border: none;
+}
+.btn-success{
+  background-color: #61dafb;
+  color: black;
+  border: none;
+}
+.btn-success:hover{
+  background-color: #f39aa6;
+ 
+}
+.table tbody{
+  font-size: 12px;
+  text-align:center;
+}
+.table label{
+  font-size: 15px;
+  text-align:center;
+}
+
 }
 
 
@@ -425,6 +480,19 @@ font-size: 12px;
   text-decoration: none;
   color: black;
   
+}
+.img-det{
+  width: 100%;
+  height: 220px;
+}
+.prd-pre{
+  font-family: Bree Serif;
+  font-size: 20px;
+}
+.img-box{
+  height: 250px;
+  border:1px solid #61dafb;
+  border-radius: 20px;
 }
 .it-menu{
   background-color: #61dafb;
@@ -578,5 +646,31 @@ font-size: 12px;
 }
 .pie p{
   font-size: 10px;
+}
+
+.btn-danger{
+  width: 25px;
+  height: 30px;
+  font-size: 12px;
+  text-align: left;
+  padding-left: 7px;
+  border-radius: 5px;
+  border: none;
+}
+.btn-success{
+  background-color: #61dafb;
+  color: black;
+}
+.btn-success:hover{
+  background-color: #f39aa6;
+ 
+}
+.table tbody{
+  font-size: 12px;
+  text-align:center;
+}
+.table label{
+  font-size: 15px;
+  text-align:center;
 }
 }

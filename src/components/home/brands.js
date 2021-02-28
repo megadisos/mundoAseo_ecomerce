@@ -2,12 +2,24 @@ import React, {useState,useEffect} from 'react'
 import image from './../../images/im1.jpg'
 function Brands(props){
   const [marca,setMarca] = useState([])
+  // useEffect(() => {
+  //   fetch("https://www.nabtastore.com.co/api-ma/Marca/",{
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type':'application/json',
+  //       'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+  //     }
+  //   })
+  //   .then( resp => resp.json())
+  //   .then( resp => setMarca(resp))
+  //   .catch( error => console.log(error))
+  // }, [])
   useEffect(() => {
-    fetch("https://www.nabtastore.com.co/api-ma/Marca/",{
+    fetch("http://127.0.0.1:8000/api-ma/Marca/",{
       method: 'GET',
       headers: {
         'Content-Type':'application/json',
-        'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+        'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
       }
     })
     .then( resp => resp.json())
@@ -39,7 +51,7 @@ function Brands(props){
                       
                         <div key={mc.id} className="col-lg-2 ">
                       
-                            <center><img src={mc.get_path} className="img-fluid mt-2 img-prods" alt="Responsive image" /></center>
+                           <img src={mc.get_path} className="img-fluid mt-2 img-prods" alt="Responsive image" />
                             </div>
                     )
                 

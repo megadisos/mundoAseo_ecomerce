@@ -5,11 +5,15 @@ import {mycontext} from './../../App'
 import  { Redirect, useHistory } from 'react-router-dom'
 
 function Carrito(props){
-    const items = useContext(mycontext)
+    const {item, selecti } = useContext(mycontext)
+    const [items, setItems] = item
+    const [select, setSelect] = selecti
     const [can,setCan] = useState({})
     const [total,setTotal] = useState([])
+    let precio = 0
     let history = useHistory()
     let cont = 0
+    let pos = 0
     function getCookieValue(name) {
         let arrays = []
         let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
@@ -64,37 +68,111 @@ function Carrito(props){
     }
 
     return (
-        <div className="container">
+        <div >
             <Header />
             <Menu />
+            <center><div className="row container">
+                <div className="col-12">
+                <div class="alert alert-warning text-center prd-name" role="alert">
+    Envios gratis desde $50.000
+</div>
+                </div>
+            </div></center>
           
+            <div className="row">
+                <div className="col-12 prd-name"><center><h1>Carrito</h1></center></div>
+            </div>
+          <center><div className="row mt-3 container">
+          <div  className="col-12">
+
+            <table class="table prd-name">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio unitario</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Total {select}</th>
+                </tr>
+            </thead>
+            <tbody>
             {items && items.map(it =>{
                 if (isInCart(it.id)){
+                    pos += 1
                     cont = cont + (parseInt(getCookieValue(it.id)) * it.precio)
+                    if (it.opciones){
+                        if(getCookieValue(`pr${it.id}`) === "it.precio250"){
+                            precio = it.precio250
+    
+                        }else if(getCookieValue(`pr${it.id}`) === "it.precio500"){
+                            precio = it.precio500
+                        }else if(getCookieValue(`pr${it.id}`) === "it.precioGl"){
+                            precio = it.precioGl
+                        }else if(getCookieValue(`pr${it.id}`) === "it.precioGr"){
+                            precio = it.precioGr
+                        }
+                    }else{
+                        precio = it.precio
+                    }
+                   
                     return (
                         
-                        <div key={it.id}>
-                            <form>
+                       
+                            
+                            
+                            
+                                <tr key={it.id}>
+                                <th scope="row">{pos}</th>
+                                <td><img src={it.get_path} width="40" height="40"></img> {it.titulo}</td>
+                                <td>{precio}</td>
+                                <td><form><input type="number" id={it.id}  min="0" max="100"  defaultValue = "1" onChange={e =>calcPrice(it.id) }></input> </form></td>
+                                <td>${getCookieValue(it.id) === "" ? (precio,document.cookie = `${it.id}=1`) : precio * parseInt(getCookieValue(it.id))}   <button className="btn btn-danger" onClick={e => deleteFromCart(it.id)}>X</button></td>
                                 
-                            {it.titulo} {it.id} ${it.precio}
-                            <input type="number" id={it.id}  min="0" max="100"  defaultValue = "1" onChange={e =>calcPrice(it.id) }></input>
+                                </tr>
+                               
+                               
+                               
                             
-                            {getCookieValue(it.id) === "" ? (it.precio,document.cookie = `${it.id}=1`) : it.precio * parseInt(getCookieValue(it.id))}
-                            <button onClick={e => deleteFromCart(it.id)}>Delete</button>
                             
-                            </form>
-                           
-                        </div>
+                        
                     )
                    
                     
                 }
                    
             })}
+            <tr>
+                                <th scope="row"></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><label>Envio  ${(isNaN(cont) ? getInitial() : cont) < 50000 ? 7000 : 0}</label></td>
+                                
+                                </tr>
+            <tr>
+                                <th scope="row"></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><label>Total  ${(isNaN(cont) ? getInitial() : cont) < 50000 ? (isNaN(cont) ? getInitial() : cont) + 7000: (isNaN(cont) ? getInitial() : cont)}</label></td>
+                                
+                                </tr>
+                                <tr>
+                                <th scope="row"></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="button" class="btn btn-success">Finalizar compra</button></td>
+                                
+                                </tr>
+            </tbody>
+            </table>                         
+            </div>
+            </div></center>
             
 
             
-           ESTE ES EL Total {isNaN(cont) ? getInitial() : cont}
+          
           
         </div>
     )

@@ -3,7 +3,10 @@ import image from './../../images/im1.jpg'
 import {mycontext} from './../../App'
 
 function Bseller(props){
-    const items = useContext(mycontext)
+    const {item, selecti } = useContext(mycontext)
+    const [items, setItems] = item
+    const [select, setSelect] = selecti
+   
     return(
         <div>
             <div className="row text-center mt-2">
@@ -19,7 +22,7 @@ function Bseller(props){
                             <center><img src={item.get_path} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                             <p className="precio mt-1">${item.precio}</p>
                             <p className="titulo ">{item.titulo}</p>
-                            <button type="button" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <button type="button" onClick={e => props.CartAdd(item.id) } class="btn btn-primary btn-cart">Agregar al carrito</button></center>
                             </div>
                     )
                 

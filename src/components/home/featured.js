@@ -1,15 +1,14 @@
 import React, {useState,useContext} from 'react'
 import {mycontext} from './../../App'
 import image from './../../images/im1.jpg'
-import  { Redirect, useHistory } from 'react-router-dom'
+import logo from './../../images/LETRERO.png'
 
 function Featured(props){
-    let history = useHistory()
-    const items = useContext(mycontext)
-    const ProductLink = (id , name) => {
-        const fname = name.replace(" ","-")
-        history.push(`/producto/${id}/${fname}`)
-    }
+    
+    const {item, selecti } = useContext(mycontext)
+    const [items, setItems] = item
+    const [select, setSelect] = selecti
+ 
     return(
         <div className="bg-light">
         <div className="row text-center titulos mt-2 ">
@@ -23,10 +22,14 @@ function Featured(props){
                 if (item.destacado === true){
                     return (
                         <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3">
-                            <center><img src={item.get_path}   onClick={()=> ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
+                            <center><img src={item.get_path}   onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                             <p className="precio mt-1">${item.precio}</p>
-                            <p className="titulo ">{item.titulo}</p>
-                            <button type="button" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <p className="titulo ">{item.titulo} {item.id}</p>
+                            <button type="button" onClick={e => props.CartAdd(item.id) }  data-toggle="collapse"  data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            
+                          
+                          
+
                             </div>
                     )
                 }

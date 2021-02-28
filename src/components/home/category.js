@@ -16,6 +16,18 @@ function Category(props){
     .then( resp => setCategoria(resp))
     .catch( error => console.log(error))
   }, [])
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:8000/api-ma/Categorias/",{
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type':'application/json',
+  //       'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
+  //     }
+  //   })
+  //   .then( resp => resp.json())
+  //   .then( resp => setCategoria(resp))
+  //   .catch( error => console.log(error))
+  // }, [])
     return(
         <div className="row cat">
              

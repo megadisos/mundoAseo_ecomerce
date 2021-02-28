@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
-import logo from './../../images/logo.png'
+import logo from './../../images/LETRERO.png'
 import menu from './../../images/menu.png'
 import  { Redirect, useHistory , useLocation} from 'react-router-dom'
 function Menu(props){
   const location = useLocation();
     return(
       
-        <nav className="navbar nav-menu navbar-expand-lg navbar-expand-md ">
-  <a className="navbar-brand" href="#"><img src={logo} className="img-fluid" width="200" height="80"></img></a>
+       <center><nav className="navbar nav-menu navbar-expand-lg navbar-expand-md ">
+  <a className="navbar-brand mt-3" href="#"><img src={logo} className="img-fluid" width="200" height="80"></img></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"><img src={menu} className="img-fluid" width="40" height="40"></img></span>
   </button>
@@ -19,7 +19,7 @@ function Menu(props){
       <a className={location.pathname === "/contacto" ? "nav-item  it-menu nav-link":"nav-item  nav-link"} href="#">CONTACTO</a>
     </div>
   </div>
-</nav>
+</nav></center> 
     )
 }
 export default Menu
