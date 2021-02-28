@@ -17,7 +17,7 @@ function Home(props){
           method: 'GET',
           headers: {
             'Content-Type':'application/json',
-            'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
+            'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
           }
         })
         .then( resp => resp.json())
