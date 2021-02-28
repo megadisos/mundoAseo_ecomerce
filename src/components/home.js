@@ -13,7 +13,7 @@ function Home(props){
     const  [publ,setPubl] = useState([])
     const [select,setSelect] = useState("Envase 250 Grs")
     useEffect(() => {
-        fetch("https://nabtastore.com.co/api-ma/Publicidad/",{
+        fetch("https://www.nabtastore.com.co/api-ma/Publicidad/",{
           method: 'GET',
           headers: {
             'Content-Type':'application/json',
