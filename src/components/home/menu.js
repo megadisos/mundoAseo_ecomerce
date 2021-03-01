@@ -14,7 +14,17 @@ function Menu(props){
   <div className="navbar collapse navbar-collapse " id="navbarNavAltMarkup" >
     <div className="navbar-nav">
       <a className={location.pathname === "/" ? "nav-item it-menu nav-link active":"nav-item nav-link active"}  href="#">INICIO <span className="sr-only">(current)</span></a>
-      <a className={location.pathname === "/carrito" ? "nav-item  it-menu nav-link":"nav-item  nav-link"}  href="#">CATEGORIAS</a>
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          CATEGORIA
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {props.cat && props.cat.map(ct =>{
+              return(
+                <a class="dropdown-item" onClick={()=> props.CategoryLink(ct.nombre)} >{ct.nombre}</a>
+              )
+          })}
+          
+        </div>
       <a className={location.pathname === "/acerca" ? "nav-item it-menu nav-link":"nav-item nav-link active"} href="#">ACERCA</a>
       <a className={location.pathname === "/contacto" ? "nav-item  it-menu nav-link":"nav-item  nav-link"} href="#">CONTACTO</a>
     </div>

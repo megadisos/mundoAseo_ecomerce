@@ -14,9 +14,11 @@ function Footer(props){
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 ">
                 <h6 className="ct">Categorias</h6>
-                <p>categoria 1</p>
-                <p>categoria 2</p>
-                <p>categoria 3</p>
+                {props.cat && props.cat.map(ct =>{
+              return(
+                <p  onClick={()=> props.CategoryLink(ct.nombre)} >{ct.nombre}</p>
+              )
+          })}
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 ">
             <h6 className="rd">Redes</h6>

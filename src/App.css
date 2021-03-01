@@ -448,7 +448,12 @@ font-size: 12px;
   font-size: 15px;
   text-align:center;
 }
-
+.dropdown-menu{
+  position: absolute;
+  top: 50px;
+  left: 400px;
+  width: 50px;
+}
 }
 
 
@@ -672,5 +677,11 @@ font-size: 12px;
 .table label{
   font-size: 15px;
   text-align:center;
+}
+.dropdown-menu{
+  position: absolute;
+  top: 50px;
+  left: 550px;
+  width: 50px;
 }
 }

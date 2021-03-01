@@ -5,9 +5,9 @@ import logo from './../../images/LETRERO.png'
 
 function Featured(props){
     
-    const {item, selecti } = useContext(mycontext)
+    const {item, marcai } = useContext(mycontext)
     const [items, setItems] = item
-    const [select, setSelect] = selecti
+    const [marca, setMarca] = marcai
  
     return(
         <div className="bg-light">

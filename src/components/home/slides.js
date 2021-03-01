@@ -6,7 +6,7 @@ function Slide(props){
             {props.publ && props.publ.filter(pb => pb.id === 1).map(pub =>{
                 return (
                     <div>
-                    <img src={pub.get_path} className="img-fluid img-pr"></img>
+                    <img src={pub.get_path} onClick={()=> props.MundoLink()} className="img-fluid img-pr"></img>
                    
                     </div>
                 )

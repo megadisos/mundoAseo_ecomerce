@@ -5,13 +5,14 @@ import {mycontext} from './../../App'
 import { useCookies } from 'react-cookie'
 import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
-
+import  { Redirect, useHistory } from 'react-router-dom'
 function Producto(props){
 
     const name = props.match.params.productName
     const id = props.match.params.id
-    const {item, selecti } = useContext(mycontext)
+    const {item, marcai,selecti } = useContext(mycontext)
     const [items, setItems] = item
+    const [marca, setMarca] = marcai
     const [select, setSelect] = selecti
     function getCookieValue(name) {
         let arrays = []
@@ -29,6 +30,10 @@ function Producto(props){
         return false
         
     } 
+    let history = useHistory()
+    const CategoryLink = (name) => {
+        history.push(`/categoria/${name}`)
+    }
     const CartAdd = (id,op) =>{
         console.log("si entro con id" + id)
         var arr = [id]
@@ -76,6 +81,7 @@ function Producto(props){
                             <center><h1 className="prd-name">{it.titulo}</h1></center>
                         </div>
                     </div>
+                    <center><div class="dropdown-divider in-div "></div></center>
                     <center><div className="row container mt-2 bg-light" >
                       <div className="col-lg-6 col-md-6 col-dm-12 img-box">
                       
@@ -103,7 +109,7 @@ function Producto(props){
                                  </form>
                                  : <br></br> }
                                
-                                <p>{select}</p>
+                                
                                 <p className="prd-pre text-left"> ${ it.opciones ? select === "Envase 250 Grs" ? it.precio250 : select === "Envase 500 Grs" ?  it.precio500 : select === "Galon(4 litros)" ? it.precioGl :select === "Garrafa (20 litros)" ? it.precioGr: it.precio : it.precio}  </p>
                                                                         
                                                                         

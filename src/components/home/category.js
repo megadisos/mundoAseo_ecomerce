@@ -35,21 +35,21 @@ function Category(props){
               if(mc.id === 1){
                     return(
                         <div key={mc.id} className="col-lg-3 col-md-3 col-sm-12 main-cat mb-3">
-                            <center><img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
+                            <center><img src={mc.get_path} class="img-fluid mt-2 img-pro" onClick={()=> props.CategoryLink(mc.get_name)} alt="Responsive image" />
                             <p className="text-center">{mc.get_name}</p></center>
                         </div>
                     )
             }else if (mc.id === 2){
                 return(
                 <div key={mc.id} className="col-lg-3 col-md-3 col-sm-12 main-cat1 mb-3">
-                <center><img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
+                <center><img src={mc.get_path} onClick={()=> props.CategoryLink(mc.get_name)} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
                 <p className="text-center">{mc.get_name}</p></center>
             </div>
                 )
             }else {
                 return(
                 <div key={mc.id} className="col-lg-3 col-md-3 col-sm-12 main-cat2">
-                            <center><img src={mc.get_path} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
+                            <center><img src={mc.get_path} onClick={()=> props.CategoryLink(mc.get_name)} class="img-fluid mt-2 img-pro"  alt="Responsive image" />
                             <p className="text-center">{mc.get_name}</p></center>
                         </div>
                         )
