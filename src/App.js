@@ -12,44 +12,55 @@ function App() {
  const [select,setSelect] = useState("Envase 250 Grs")
  const [marca, setMarca] = useState([])
 
-//  useEffect(() => {
-//    fetch("https://www.nabtastore.com.co/api-ma/Items/",{
-//      method: 'GET',
-//      headers: {
-//        'Content-Type':'application/json',
-//        'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
-//      }
-//    })
-//    .then( resp => resp.json())
-//    .then( resp => setItem(resp))
-//    .catch( error => console.log(error))
-//    .then( resp => console.log(resp))
-//  }, [])
-useEffect(() => {
-  fetch("http://127.0.0.1:8000/api-ma/Items/",{
-    method: 'GET',
-    headers: {
-      'Content-Type':'application/json',
-      'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
-    }
-  })
-  .then( resp => resp.json())
-  .then( resp => setItem(resp))
-  .catch( error => console.log(error))
-  .then( resp => console.log(resp))
-
-  fetch("http://127.0.0.1:8000/api-ma/Marca/",{
+ useEffect(() => {
+   fetch("https://www.nabtastore.com.co/api-ma/Items/",{
+     method: 'GET',
+     headers: {
+       'Content-Type':'application/json',
+       'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+     }
+   })
+   .then( resp => resp.json())
+   .then( resp => setItem(resp))
+   .catch( error => console.log(error))
+   .then( resp => console.log(resp))
+fetch("https://www.nabtastore.com.co/api-ma/Marca/",{
           method: 'GET',
           headers: {
             'Content-Type':'application/json',
-            'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
+            'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
           }
         })
         .then( resp => resp.json())
         .then( resp => setMarca(resp))
         .catch( error => console.log(error))
         .then( resp => console.log(resp))
-}, [])
+ }, [])
+// useEffect(() => {
+//   fetch("http://127.0.0.1:8000/api-ma/Items/",{
+//     method: 'GET',
+//     headers: {
+//       'Content-Type':'application/json',
+//       'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
+//     }
+//   })
+//   .then( resp => resp.json())
+//   .then( resp => setItem(resp))
+//   .catch( error => console.log(error))
+//   .then( resp => console.log(resp))
+
+//   fetch("http://127.0.0.1:8000/api-ma/Marca/",{
+//           method: 'GET',
+//           headers: {
+//             'Content-Type':'application/json',
+//             'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
+//           }
+//         })
+//         .then( resp => resp.json())
+//         .then( resp => setMarca(resp))
+//         .catch( error => console.log(error))
+//         .then( resp => console.log(resp))
+// }, [])
   return (
     <mycontext.Provider value={{item: [item,setItem],marcai:[marca,setMarca],selecti:[select,setSelect]}}>
       <CookiesProvider>
