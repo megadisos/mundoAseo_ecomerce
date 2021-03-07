@@ -24,7 +24,7 @@ function Marcas(props){
         <Menu />
         <div className="row">
         <div className="col-12">
-            
+           
                 {marca && marca.filter(m => m.nombre === categoria).map(mc=>{
                    
                         return (

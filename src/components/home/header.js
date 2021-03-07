@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react'
 import {mycontext} from './../../App'
+import  { Redirect, useHistory , useLocation, Link} from 'react-router-dom'
 function Header(props){
     const valor = useContext(mycontext);
     return(
@@ -20,7 +21,7 @@ function Header(props){
         </form>
       </li>
       <li class="nav-item">
-      <i class="fa fa-shopping-cart " aria-hidden="true"></i>
+      <Link to="/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></Link>
       </li>
       </ul>
         </nav>

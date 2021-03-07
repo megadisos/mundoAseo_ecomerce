@@ -25,7 +25,7 @@ function Featured(props){
                             <center><img src={item.get_path}   onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                             <p className="precio mt-1">${item.precio}</p>
                             <p className="titulo ">{item.titulo} {item.id}</p>
-                            <button type="button" onClick={e => props.CartAdd(item.id) }  data-toggle="collapse"  data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <button type="button" onClick={e => props.CartAdd(item.id,item.precio) }  data-toggle="collapse"  data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
                             
                           
                           

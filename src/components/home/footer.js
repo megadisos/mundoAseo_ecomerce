@@ -8,9 +8,11 @@ function Footer(props){
         <center><div className="row  pie bg-light">
             <div className="col-lg-4 col-md-4 col-sm-12 ">
                 <h6 className="mr">Marcas</h6>
-                <p>marca 1</p>
-                <p>marca 2</p>
-                <p>marca 3</p>
+                {props.marca && props.marca.map(ct =>{
+              return(
+                <p  onClick={()=> props.MarcaLink(ct.nombre)} >{ct.nombre}</p>
+              )
+          })}
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 ">
                 <h6 className="ct">Categorias</h6>

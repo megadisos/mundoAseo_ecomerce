@@ -22,7 +22,7 @@ function Bseller(props){
                             <center><img src={item.get_path} onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                             <p className="precio mt-1">${item.precio}</p>
                             <p className="titulo ">{item.titulo}</p>
-                            <button type="button" onClick={e => props.CartAdd(item.id) } class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <button type="button" onClick={e => props.CartAdd(item.id,item.precio) } class="btn btn-primary btn-cart">Agregar al carrito</button></center>
                             </div>
                     )
                 

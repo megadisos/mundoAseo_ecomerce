@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import Header from './home/header'
 import Menu from './home/menu'
 import Slide from './home/slides'
@@ -13,6 +13,10 @@ function Home(props){
     const  [publ,setPubl] = useState([])
     const [select,setSelect] = useState("Envase 250 Grs")
     const [cat, setCat] = useState([])
+
+    const {item, marcai} = useContext(mycontext)
+    const [items, setItems] = item
+    const [marca, setMarca] = marcai
    
     // useEffect(() => {
     //     fetch("http://127.0.0.1:8000/api-ma/Publicidad/",{
@@ -86,17 +90,19 @@ function Home(props){
         return false
         
     } 
-    const CartAdd = (id) =>{
-        console.log("si entro con id" + id)
+    const CartAdd = (id,precio) =>{
+        
         var arr = [id]
         var current = getCookieValue("prod")
         if (current === ""){
             document.cookie = `prod=${id}`
-            document.cookie = `${id}=1`
+            document.cookie = `${id}=1,${precio}`
+            
         }else{
             if(checkRepeated(id) === false){
                 document.cookie = `prod=${current},${id}`
-                document.cookie = `${id}=1`
+                document.cookie = `${id}=1,${precio}`
+                
             }
             
         }
@@ -114,7 +120,7 @@ function Home(props){
         history.push(`/marca/${name}`)
     }
     const MundoLink = () => {
-        const name = "Mundo Aseo"
+        const name = "mundo_aseo"
         history.push(`/marca/${name}`)
     }
     return(
@@ -135,7 +141,7 @@ function Home(props){
             <Bseller CartAdd={CartAdd} ProductLink={ProductLink}/>
         </div>
         <div className="container-fluid">
-            <Footer CategoryLink={CategoryLink} cat={cat}/>
+            <Footer CategoryLink={CategoryLink} MarcaLink={MarcaLink} cat={cat} marca={marca}/>
         </div>
         </div>
     )

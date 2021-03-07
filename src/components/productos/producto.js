@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React, {useState,useContext,useEffect} from 'react'
 import Header from './../home/header'
 import Menu from './../home/menu'
 import {mycontext} from './../../App'
@@ -7,7 +7,10 @@ import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
 import  { Redirect, useHistory } from 'react-router-dom'
 function Producto(props){
-
+    useEffect(() => {
+        setSelect("Envase 250 Grs")
+        
+    }, [])
     const name = props.match.params.productName
     const id = props.match.params.id
     const {item, marcai,selecti } = useContext(mycontext)
@@ -20,6 +23,7 @@ function Producto(props){
         return result ? result.pop() : ""
       }
     function checkRepeated(id){
+       
         var data= getCookieValue("prod").split(",")
         for (let i of data){
             if (id === parseInt(i)){
@@ -34,18 +38,18 @@ function Producto(props){
     const CategoryLink = (name) => {
         history.push(`/categoria/${name}`)
     }
-    const CartAdd = (id,op) =>{
+    const CartAdd = (id,op,pr,p250,p500,pgl,pgr) =>{
         console.log("si entro con id" + id)
         var arr = [id]
         var current = getCookieValue("prod")
         if (current === ""){
             document.cookie = `prod=${id}`
-            document.cookie = `${id}=1`
+            document.cookie = `${id}=1,${select}`
           
         }else{
             if(checkRepeated(id) === false){
                 document.cookie = `prod=${current},${id}`
-                document.cookie = `${id}=1`
+                document.cookie = `${id}=1,${select}`
            
                 
             }
@@ -53,16 +57,21 @@ function Producto(props){
         }
         if (op){
             if (select === "Envase 250 Grs"){
-                document.cookie = `pr${id}=it.precio250`
+                
+                document.cookie = `${id}=1,${p250}`
             }else if(select === "Envase 500 Grs"){
-                document.cookie = `pr${id}=it.precio500`
+               
+                document.cookie = `${id}=1,${p500}`
             }else if(select === "Galon(4 litros)"){
-                document.cookie = `pr${id}=it.precioGl`
+               
+                document.cookie = `${id}=1,${pgl}`
             }else{
-                document.cookie = `pr${id}=it.precioGr`
+                
+                document.cookie = `${id}=1,${pgr}`
             }
         }else{
-            document.cookie = `pr${id}=it.precio`
+            
+            document.cookie = `${id}=1,${pr}`
         }
         
         
@@ -74,6 +83,7 @@ function Producto(props){
         <Menu />
         
         {items && items.filter(product => product.id == id).map(it =>{
+            
                 return(
                     <div>
                     <div className="row mt-2 bg-light " key={it.id}>
@@ -115,7 +125,7 @@ function Producto(props){
                                                                         
                                                                         
                                                                         
-                                <button type="button" onClick={e => CartAdd(it.id,it.opciones) }class="btn btn-primary bt-pos btn-cart mt-5 ">Agregar al carrito</button>
+                                <button type="button" onClick={e => CartAdd(it.id,it.opciones,it.precio,it.precio250,it.precio500,it.precioGl,it.precioGr) }class="btn btn-primary bt-pos btn-cart mt-5 ">Agregar al carrito</button>
                                 
                         </div>
                     </div></center>

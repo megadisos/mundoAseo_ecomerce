@@ -9,7 +9,9 @@ function Carrito(props){
     const [items, setItems] = item
     const [select, setSelect] = selecti
     const [can,setCan] = useState({})
+    const [getId,setGetId] = useState([])
     const [total,setTotal] = useState([])
+    const [ctvalue,setCtvalue] = useState(1)
     let precio = 0
     let history = useHistory()
     let cont = 0
@@ -43,17 +45,58 @@ function Carrito(props){
         return total
     }
     function calcPrice(id){
-        console.log("Este es el id " + id + " Y este es el "+ document.getElementById(id).value)
-        document.cookie = `${id}=${document.getElementById(id).value}`
-        const theid = id
-        setCan(prevCan => ({...prevCan,id:document.getElementById(id).value}))
-
         
-    }     
+        const precio = document.getElementById(`precio${id}`).value
+        document.cookie = `${id}=${document.getElementById(id).value},${precio}`
+        const theid = id
+        
+        setCan(prevCan => ({...prevCan,precio:document.getElementById(id).value}))
+       
+        
+    }  
+  
+    function getParcial(id){
+        
+        console.log("Este es el ID al comienzo" + id)
+        
+        console.log("ESTO ES EL contador" + ctvalue)
+       
+        if (isNaN(parseInt(getCookieValue(id).split(",")[0]))){
+        
+            let co = document.cookie.split(";")[2].split("=")[1].split(",")
+            return parseInt(co[0]) * parseInt(co[1])
+        }else{
+            console.log("ESTO ES EL ID" + id)
+            let c = getCookieValue(id).split(",")
+            console.log("ESTO ES " + c)
+            let total = parseInt(c[0]) * parseInt(c[1])
+            
+            return total
+        }
+       
+        
+       
+    }
+    function getTotal(){
+        let total = 0
+        let ids = getCookieValue("prod").split(",")
+        
+        ids.map(id => {
+            let getValues = getCookieValue(id).split(",")
+            total = total + (parseInt(getValues[0]) * parseInt(getValues[1]))
+        })
+        return total
+
+    }
+    
+   
     function deleteFromCart(id){
         var to_delete = getCookieValue("prod").split(",")
         if(to_delete.length == 1){
             document.cookie = `prod=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+            document.cookie = `pr${id}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+            document.cookie = `pr=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+            document.cookie = `${id}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
         }else{
             // var idx = to_delete.indexOf(id.toString())
             // console.log("Este es el dat " + idx + " y este es el " + to_delete)
@@ -62,6 +105,7 @@ function Carrito(props){
               })
             var to_add = to_delete_filter.join(',')
             document.cookie = `prod=${to_add}`
+            document.cookie = `${id}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
         }
        
         history.push(`/carrito`)
@@ -101,16 +145,19 @@ function Carrito(props){
                     pos += 1
                     cont = cont + (parseInt(getCookieValue(it.id)) * it.precio)
                     if (it.opciones){
-                        if(getCookieValue(`pr${it.id}`) === "it.precio250"){
-                            precio = it.precio250
-    
-                        }else if(getCookieValue(`pr${it.id}`) === "it.precio500"){
-                            precio = it.precio500
-                        }else if(getCookieValue(`pr${it.id}`) === "it.precioGl"){
-                            precio = it.precioGl
-                        }else if(getCookieValue(`pr${it.id}`) === "it.precioGr"){
-                            precio = it.precioGr
-                        }
+                        precio = parseInt(getCookieValue(`${it.id}`).split(",")[1])
+                        // if(getCookieValue(`pr${it.id}`) === "it.precio250"){
+                        //     precio = it.precio250
+            
+                        // }else if(getCookieValue(`pr${it.id}`) === "it.precio500"){
+                        //     precio = it.precio500
+                        // }else if(getCookieValue(`pr${it.id}`) === "it.precioGl"){
+                        //     precio = it.precioGl
+                        // }else if(getCookieValue(`pr${it.id}`) === "it.precioGr"){
+                        //     precio = it.precioGr
+                        // }else if(getCookieValue(`pr`) === "precio"){
+                        //     precio = it.precio
+                        // }
                     }else{
                         precio = it.precio
                     }
@@ -124,9 +171,10 @@ function Carrito(props){
                                 <tr key={it.id}>
                                 <th scope="row">{pos}</th>
                                 <td><img src={it.get_path} width="40" height="40"></img> {it.titulo}</td>
-                                <td>{precio}</td>
-                                <td><form><input type="number" id={it.id}  min="0" max="100"  defaultValue = "1" onChange={e =>calcPrice(it.id) }></input> </form></td>
-                                <td>${getCookieValue(it.id) === "" ? (precio,document.cookie = `${it.id}=1`) : precio * parseInt(getCookieValue(it.id))}   <button className="btn btn-danger" onClick={e => deleteFromCart(it.id)}>X</button></td>
+                                
+                                <td><form><input type="number" disabled id={`precio${it.id}`} value={precio}/> </form></td>
+                                <td><form> <input type="number" id={it.id}  min="0" max="100"  defaultValue = "1" min="1" onChange={e =>calcPrice(it.id) }></input> </form></td>
+                                <td> {getParcial(it.id)}   <button className="btn btn-danger" onClick={e => deleteFromCart(it.id)}>X</button></td>
                                 
                                 </tr>
                                
@@ -146,7 +194,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><label>Envio  ${(isNaN(cont) ? getInitial() : cont) < 50000 ? 7000 : 0}</label></td>
+                                <td><label>Envio  ${getTotal() < 50000 ? 7000 : 0}</label></td>
                                 
                                 </tr>
             <tr>
@@ -154,7 +202,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><label>Total  ${(isNaN(cont) ? getInitial() : cont) < 50000 ? (isNaN(cont) ? getInitial() : cont) + 7000: (isNaN(cont) ? getInitial() : cont)}</label></td>
+                                <td><label>Total  ${isNaN(getTotal()) ? 0 : getTotal() < 50000 ? getTotal() + 7000 : getTotal()}</label></td>
                                 
                                 </tr>
                                 <tr>
