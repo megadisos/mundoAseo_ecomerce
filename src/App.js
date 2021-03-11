@@ -39,7 +39,7 @@ fetch("https://www.nabtastore.com.co/api-ma/Marca/",{
         .then( resp => setMarca(resp))
         .catch( error => console.log(error))
         .then( resp => console.log(resp))
-        fetch("https://www.nabtastore.com.co/api-ma/Productos/",{
+fetch("https://www.nabtastore.com.co/api-ma/Productos/",{
                     method: 'GET',
                     headers: {
                       'Content-Type':'application/json',
@@ -49,7 +49,7 @@ fetch("https://www.nabtastore.com.co/api-ma/Marca/",{
                   .then( resp => resp.json())
                   .then( resp => setCat(resp))
                   .catch( error => console.log(error))
-                  .then( resp => console.log(resp))
+                  .then( resp => console.log("ESTA ES LA RESPUESTA DEL CATI" + resp))
  }, [])
 // useEffect(() => {
 //   fetch("http://127.0.0.1:8000/api-ma/Items/",{

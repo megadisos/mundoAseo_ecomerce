@@ -10,7 +10,7 @@ import  { useHistory } from 'react-router-dom'
 
 function Marcas(props){
     const categoria = props.match.params.catMar
-    const {item, marcai,cati} = useContext(mycontext)
+    const {item, marcai,selecti,cati,cl} = useContext(mycontext)
     const [items, setItems] = item
     const [marca, setMarca] = marcai
     const [cat, setCat] = cati
