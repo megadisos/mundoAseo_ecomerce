@@ -19,39 +19,12 @@ function Home(props){
     const [marca, setMarca] = marcai
    
    
-    useEffect(() => {
-        fetch("http://127.0.0.1:8000/api-ma/Publicidad/",{
-          method: 'GET',
-          headers: {
-            'Content-Type':'application/json',
-            'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
-          }
-        })
-        .then( resp => resp.json())
-        .then( resp => setPubl(resp))
-        .catch( error => console.log(error))
-        .then( resp => console.log(resp))
-
-        fetch("http://127.0.0.1:8000/api-ma/Productos/",{
-          method: 'GET',
-          headers: {
-            'Content-Type':'application/json',
-            'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
-          }
-        })
-        .then( resp => resp.json())
-        .then( resp => setCat(resp))
-        .catch( error => console.log(error))
-        .then( resp => console.log(resp))
-
-        
-      }, [])
     // useEffect(() => {
-    //     fetch("https://www.nabtastore.com.co/api-ma/Publicidad/",{
+    //     fetch("http://127.0.0.1:8000/api-ma/Publicidad/",{
     //       method: 'GET',
     //       headers: {
     //         'Content-Type':'application/json',
-    //         'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+    //         'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
     //       }
     //     })
     //     .then( resp => resp.json())
@@ -59,11 +32,11 @@ function Home(props){
     //     .catch( error => console.log(error))
     //     .then( resp => console.log(resp))
 
-    //     fetch("https://www.nabtastore.com.co/api-ma/Productos/",{
+    //     fetch("http://127.0.0.1:8000/api-ma/Productos/",{
     //       method: 'GET',
     //       headers: {
     //         'Content-Type':'application/json',
-    //         'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+    //         'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
     //       }
     //     })
     //     .then( resp => resp.json())
@@ -73,6 +46,33 @@ function Home(props){
 
         
     //   }, [])
+    useEffect(() => {
+        fetch("https://www.nabtastore.com.co/api-ma/Publicidad/",{
+          method: 'GET',
+          headers: {
+            'Content-Type':'application/json',
+            'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+          }
+        })
+        .then( resp => resp.json())
+        .then( resp => setPubl(resp))
+        .catch( error => console.log(error))
+        .then( resp => console.log(resp))
+
+        fetch("https://www.nabtastore.com.co/api-ma/Productos/",{
+          method: 'GET',
+          headers: {
+            'Content-Type':'application/json',
+            'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+          }
+        })
+        .then( resp => resp.json())
+        .then( resp => setCat(resp))
+        .catch( error => console.log(error))
+        .then( resp => console.log(resp))
+
+        
+      }, [])
     let history = useHistory()
     
     function getCookieValue(name) {
