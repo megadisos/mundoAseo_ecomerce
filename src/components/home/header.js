@@ -21,7 +21,7 @@ function Header(props){
         </form>
       </li>
       <li class="nav-item">
-      <a href="http://localhost:3000/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></a>
+      <a href="https://master.dphw95lv4xi23.amplifyapp.com/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></a>
       </li>
       </ul>
         </nav>
