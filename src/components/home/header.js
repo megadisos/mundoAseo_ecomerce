@@ -21,7 +21,7 @@ function Header(props){
         </form>
       </li>
       <li class="nav-item">
-      <Link to="/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></Link>
+      <a href="http://localhost:3000/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></a>
       </li>
       </ul>
         </nav>

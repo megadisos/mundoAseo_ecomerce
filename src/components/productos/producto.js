@@ -6,6 +6,7 @@ import { useCookies } from 'react-cookie'
 import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
 import  { Redirect, useHistory } from 'react-router-dom'
+import logo from './../../images/LETRERO.png'
 function Producto(props){
     useEffect(() => {
         setSelect("Envase 250 Grs")
@@ -13,10 +14,11 @@ function Producto(props){
     }, [])
     const name = props.match.params.productName
     const id = props.match.params.id
-    const {item, marcai,selecti } = useContext(mycontext)
+    const {item, marcai,selecti,cati } = useContext(mycontext)
     const [items, setItems] = item
     const [marca, setMarca] = marcai
     const [select, setSelect] = selecti
+    const [cat, setCat] = cati
     function getCookieValue(name) {
         let arrays = []
         let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
@@ -37,6 +39,9 @@ function Producto(props){
     let history = useHistory()
     const CategoryLink = (name) => {
         history.push(`/categoria/${name}`)
+    }
+    const MarcaLink = (name) => {
+        history.push(`/marca/${name}`)
     }
     const CartAdd = (id,op,pr,p250,p500,pgl,pgr) =>{
         console.log("si entro con id" + id)
@@ -80,7 +85,7 @@ function Producto(props){
     return (
         <div >
         <Header />
-        <Menu />
+        <Menu cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
         
         {items && items.filter(product => product.id == id).map(it =>{
             
@@ -125,15 +130,35 @@ function Producto(props){
                                                                         
                                                                         
                                                                         
-                                <button type="button" onClick={e => CartAdd(it.id,it.opciones,it.precio,it.precio250,it.precio500,it.precioGl,it.precioGr) }class="btn btn-primary bt-pos btn-cart mt-5 ">Agregar al carrito</button>
+                                <button type="button" onClick={e => CartAdd(it.id,it.opciones,it.precio,it.precio250,it.precio500,it.precioGl,it.precioGr) } data-toggle="modal"  data-target="#modal" class="btn btn-primary bt-pos btn-cart mt-5 ">Agregar al carrito</button>
                                 
+                                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><img src={logo} width="150" height="30"></img></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body titulos" >
+        El producto fue agregado a tu carrito. Que quieres hacer?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-cart-cont"  data-dismiss="modal">Seguir comprando</button>
+        <button type="button" onClick={e=> window.location.href = "https://master.dphw95lv4xi23.amplifyapp.com/carrito" } class="btn btn-primary btn-cart-pop">Ir al carrito</button>
+      </div>
+    </div>
+  </div>
+</div>
+                              
                         </div>
                     </div></center>
                     </div>
                 )
         })}
         <p className="mt-5 mb-5"></p>
-        <Footer />
+        <Footer cat={cat} marca={marca} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
         </div>
     )
 }

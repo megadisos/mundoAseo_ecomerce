@@ -2,8 +2,10 @@ import React, {useState,useEffect} from 'react'
 import image from './../../images/cat1.jpg'
 import image1 from './../../images/cat2.jpg'
 import image2 from './../../images/cat3.jpg'
+import {mycontext} from './../../App'
 function Category(props){
     const [categoria,setCategoria] = useState([])
+  
   useEffect(() => {
     fetch("https://www.nabtastore.com.co/api-ma/Categorias/",{
       method: 'GET',

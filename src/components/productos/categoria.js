@@ -8,18 +8,62 @@ import Footer from '../home/footer'
 import  { useHistory } from 'react-router-dom'
 
 function Categoria(props){
+    
     const categoria = props.match.params.catName
-    const {item, selecti } = useContext(mycontext)
+    const {item, marcai,cati } = useContext(mycontext)
     const [items, setItems] = item
+    const [marca, setMarca] = marcai
+    const [cat, setCat] = cati
     let history = useHistory()
     const ProductLink = (id , name) => {
      const fname = name.replace(" ","-")
      history.push(`/producto/${id}/${fname}`)
    }
+   function getCookieValue(name) {
+    let arrays = []
+    let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
+    return result ? result.pop() : ""
+  }
+function checkRepeated(id){
+    var data= getCookieValue("prod").split(",")
+    for (let i of data){
+        if (id === parseInt(i)){
+            return true
+        }
+        console.log("Esta es la data " + i) 
+    }
+    return false
+    
+} 
+   const CartAdd = (id,precio) =>{
+        
+    var arr = [id]
+    var current = getCookieValue("prod")
+    if (current === ""){
+        document.cookie = `prod=${id}`
+        document.cookie = `${id}=1,${precio}`
+        
+    }else{
+        if(checkRepeated(id) === false){
+            document.cookie = `prod=${current},${id}`
+            document.cookie = `${id}=1,${precio}`
+            
+        }
+        
+    }
+    
+    
+}
+const CategoryLink = (name) => {
+    history.push(`/categoria/${name}`)
+  }
+  const MarcaLink = (name) => {
+    history.push(`/marca/${name}`)
+}
     return(
         <div>
         <Header />
-        <Menu />
+        <Menu cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
         <div className="row">
             <div className="col-12">
                 <center><h1 className="prd-name">{categoria}</h1></center>
@@ -34,13 +78,13 @@ function Categoria(props){
                             <p className="precio mt-1">${ite.precio}</p>
                             <p className="titulo ">{ite.titulo}</p>
                            
-                            <button type="button" onClick={e => props.CartAdd(ite.id) } class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <button type="button" onClick={e => CartAdd(ite.id,ite.precio) } class="btn btn-primary btn-cart">Agregar al carrito</button></center>
                 </div>
                 )
             })}
            
         </div>
-        <Footer />
+        <Footer marca={marca} cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
         </div>
     )
 }

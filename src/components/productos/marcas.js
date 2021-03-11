@@ -10,18 +10,25 @@ import  { useHistory } from 'react-router-dom'
 
 function Marcas(props){
     const categoria = props.match.params.catMar
-    const {item, marcai} = useContext(mycontext)
+    const {item, marcai,cati} = useContext(mycontext)
     const [items, setItems] = item
     const [marca, setMarca] = marcai
+    const [cat, setCat] = cati
     let history = useHistory()
     const ProductLink = (id , name) => {
      const fname = name.replace(" ","-")
      history.push(`/producto/${id}/${fname}`)
    }
+   const CategoryLink = (name) => {
+    history.push(`/categoria/${name}`)
+  }
+  const MarcaLink = (name) => {
+    history.push(`/marca/${name}`)
+}
     return(
         <div>
         <Header />
-        <Menu />
+        <Menu cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
         <div className="row">
         <div className="col-12">
            
@@ -53,7 +60,7 @@ function Marcas(props){
             })}
            
         </div>
-        <Footer />
+        <Footer cat={cat} marca={marca} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
         </div>
     )
 }

@@ -2,12 +2,25 @@ import React, {useState,useContext, useEffect} from 'react'
 import Header from './../home/header'
 import Menu from './../home/menu'
 import {mycontext} from './../../App'
+import Footer from '../home/footer'
 import  { Redirect, useHistory } from 'react-router-dom'
 
 function Carrito(props){
-    const {item, selecti } = useContext(mycontext)
+    useEffect(() => {
+        let prod = getCookieValue("prod").split(",")
+        prod.map(pr =>{
+            let precio = getCookieValue(pr).split(",")[1]
+            document.cookie = `${pr}=1,${precio}`
+         })
+        let ftotal = getTotal() < 50000 ? getTotal() + 7000: getTotal()
+        document.cookie = `total=${ftotal}`
+        console.log("ESTE ES EL TOTAL "+ ftotal)
+    }, [])
+    const {item, selecti,marcai,cati } = useContext(mycontext)
     const [items, setItems] = item
     const [select, setSelect] = selecti
+    const [marca, setMarca] = marcai
+    const [cat, setCat] = cati
     const [can,setCan] = useState({})
     const [getId,setGetId] = useState([])
     const [total,setTotal] = useState([])
@@ -50,8 +63,10 @@ function Carrito(props){
         document.cookie = `${id}=${document.getElementById(id).value},${precio}`
         const theid = id
         
+        
         setCan(prevCan => ({...prevCan,precio:document.getElementById(id).value}))
        
+        
         
     }  
   
@@ -85,6 +100,7 @@ function Carrito(props){
             let getValues = getCookieValue(id).split(",")
             total = total + (parseInt(getValues[0]) * parseInt(getValues[1]))
         })
+
         return total
 
     }
@@ -110,11 +126,20 @@ function Carrito(props){
        
         history.push(`/carrito`)
     }
+    function buttonClick(total){
+        window.location.href = "https://api.whatsapp.com/send?phone=573195885466&text=Hola,%20este%20es%20mi%20pedido,%20producto1%20cant:%201,producto2%20cant:%201,%20porducto%202%20can,%20total%20:%20123%20"
+    }
+    const CategoryLink = (name) => {
+        history.push(`/categoria/${name}`)
+    }
+    const MarcaLink = (name) => {
+        history.push(`/marca/${name}`)
+    }
 
     return (
         <div >
             <Header />
-            <Menu />
+            <Menu  cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
             <center><div className="row container">
                 <div className="col-12">
                 <div class="alert alert-warning text-center prd-name" role="alert">
@@ -202,7 +227,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><label>Total  ${isNaN(getTotal()) ? 0 : getTotal() < 50000 ? getTotal() + 7000 : getTotal()}</label></td>
+                                <td><label >Total  ${isNaN(getTotal()) ? 0 : getTotal() < 50000 ? getTotal() + 7000 : getTotal()}</label></td>
                                 
                                 </tr>
                                 <tr>
@@ -210,7 +235,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><button type="button" class="btn btn-success">Finalizar compra</button></td>
+                                <td><button type="button" onClick={evt => buttonClick(0)} class="btn btn-success">Finalizar compra</button></td>
                                 
                                 </tr>
             </tbody>
@@ -220,7 +245,7 @@ function Carrito(props){
             
 
             
-          
+          <Footer marca={marca} cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
           
         </div>
     )

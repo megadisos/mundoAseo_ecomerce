@@ -26,8 +26,8 @@ function Menu(props){
           })}
           
         </div>
-      <a className={location.pathname === "/acerca" ? "nav-item it-menu nav-link":"nav-item nav-link active"} href="#">ACERCA</a>
-      <a className={location.pathname === "/contacto" ? "nav-item  it-menu nav-link":"nav-item  nav-link"} href="#">CONTACTO</a>
+      <a className={location.pathname === "/acerca" ? "nav-item it-menu nav-link":"nav-item nav-link active"} href="#"><Link to="/acerca">ACERCA</Link></a>
+      <a className={location.pathname === "/contacto" ? "nav-item  it-menu nav-link":"nav-item  nav-link"} href="#"><Link to="/contacto">CONTACTO</Link></a>
     </div>
   </div>
 </nav></center> 

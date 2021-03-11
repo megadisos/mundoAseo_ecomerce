@@ -454,6 +454,34 @@ font-size: 12px;
   left: 400px;
   width: 200px;
 }
+.btn-cart-pop{
+  font-family:  Bree Serif;
+  font-size: 10px;
+  width: 90px;
+  height: 40px;
+  background-color: #6fd0f4;
+  color: black;
+  border: none;
+ 
+}
+.btn-cart-pop:hover{
+  background-color: #f39aa6;
+  color: white;
+}
+.btn-cart-cont{
+  font-family:  Bree Serif;
+  font-size: 10px;
+  width: 120px;
+  height: 40px;
+  background-color: #b5d485;
+  color: black;
+  border: none;
+ 
+}
+.btn-cart-cont:hover{
+  background-color: #f39aa6;
+  color: white;
+}
 }
 
 
@@ -683,5 +711,33 @@ font-size: 12px;
   top: 50px;
   left: 550px;
   width: 200px;
+}
+.btn-cart-pop{
+  font-family:  Bree Serif;
+  font-size: 10px;
+  width: 90px;
+  height: 40px;
+  background-color: #6fd0f4;
+  color: black;
+  border: none;
+ 
+}
+.btn-cart-pop:hover{
+  background-color: #f39aa6;
+  color: white;
+}
+.btn-cart-cont{
+  font-family:  Bree Serif;
+  font-size: 10px;
+  width: 120px;
+  height: 40px;
+  background-color: #b5d485;
+  color: black;
+  border: none;
+ 
+}
+.btn-cart-cont:hover{
+  background-color: #f39aa6;
+  color: white;
 }
 }
