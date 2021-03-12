@@ -18,13 +18,13 @@ function Featured(props){
         </div>
         <center><div class="dropdown-divider in-div "></div></center>
         <div className="row">
-            {items && items.map(item=>{
+            {items && items.filter(pr => pr.marca === "mundo_aseo").map(item=>{
                 if (item.destacado === true){
                     return (
                         <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3">
                             <center><img src={item.get_path}   onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                             <p className="precio mt-1">${item.precio}</p>
-                            <p className="titulo ">{item.titulo} {item.id}</p>
+                            <p className="titulo ">{item.titulo}</p>
                             <button type="button" onClick={e => props.CartAdd(item.id,item.precio) }  data-toggle="modal"  data-target="#modal" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
                             
                           

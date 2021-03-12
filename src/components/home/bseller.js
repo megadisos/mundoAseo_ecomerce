@@ -16,7 +16,7 @@ function Bseller(props){
             </div>
             <center><div class="dropdown-divider in-div "></div></center>
             <div className="row">
-            {items && items.slice(0).reverse().map(item=>{
+            {items && items.slice(0).reverse().filter(pr => pr.marca != "mundo_aseo").map(item=>{
                     return (
                         <div key={item.id} className="col-lg-2 col-md-2 col-sm-12 product">
                             <center><img src={item.get_path} onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
