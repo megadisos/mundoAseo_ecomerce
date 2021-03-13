@@ -21,7 +21,7 @@ function Featured(props){
             {items && items.filter(pr => pr.get_marc === "mundo_aseo").map(item=>{
                 if (item.destacado === true){
                     return (
-                        <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3">
+                        <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3 mt-2 mb-2">
                             <center><img src={item.get_path}   onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                             <p className="precio mt-1">${item.precio}</p>
                             <p className="titulo ">{item.titulo}</p>
