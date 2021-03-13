@@ -16,7 +16,7 @@ function Bseller(props){
             </div>
             <center><div class="dropdown-divider in-div "></div></center>
             <div className="row">
-            {items && items.slice(0).map(item=>{
+            {items && items.map(item=>{
               if(item.get_marc !== "mundo_aseo"){
                 return (
                   <div key={item.id} className="col-lg-2 col-md-2 col-sm-12 product">
