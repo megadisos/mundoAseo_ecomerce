@@ -531,7 +531,7 @@ font-size: 12px;
 }
 /* menu position  */
 .navbar-nav {
-  margin-left: 700px;
+  margin-left: 400x;
   font-family: Bree Serif;
   color: black;
 }
@@ -795,7 +795,7 @@ font-size: 12px;
 }
 .titu{
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 60px;
   z-index: 1;
 }
