@@ -502,6 +502,12 @@ font-size: 12px;
   background-color: #6fd0f4;
   color:black;
 }
+.titu{
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  
+}
 }
 
 
@@ -786,5 +792,11 @@ font-size: 12px;
 .btn-cart-cont:hover{
   background-color: #f39aa6;
   color: white;
+}
+.titu{
+  position: absolute;
+  top: 30px;
+  left: 40px;
+
 }
 }
