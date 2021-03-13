@@ -240,7 +240,7 @@ font-size: 12px;
   .navbar-brand{
     position: absolute;
     top: 10px;
-    left:-20px;
+    left: 100px;
     height: 10px;
   }
   .navbar-nav {
