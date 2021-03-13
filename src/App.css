@@ -797,6 +797,6 @@ font-size: 12px;
   position: absolute;
   top: 40px;
   left: 60px;
-
+  z-index: 1;
 }
 }
