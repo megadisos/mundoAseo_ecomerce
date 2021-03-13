@@ -18,7 +18,7 @@ function Featured(props){
         </div>
         <center><div class="dropdown-divider in-div "></div></center>
         <div className="row">
-            {items && items.filter(pr => pr.marca === "mundo_aseo").map(item=>{
+            {items && items.filter(pr => pr.get_marc === "mundo_aseo").map(item=>{
                 if (item.destacado === true){
                     return (
                         <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3">

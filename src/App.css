@@ -482,6 +482,26 @@ font-size: 12px;
   background-color: #f39aa6;
   color: white;
 }
+.fa-search-btn{
+  position: absolute;
+  top:9px;
+  left: 640px;
+  width: 5px;
+  height: 5px;
+  background-color: #6fd0f4;
+  color: black;
+  border: none;
+  font-size: 10px;;
+}
+.o-btn{
+  position: relative;
+  top: -8px;
+  right: 4px;
+}
+.fa-search-btn:hover{
+  background-color: #6fd0f4;
+  color:black;
+}
 }
 
 
@@ -501,11 +521,11 @@ font-size: 12px;
 /* nav menu config*/
 .nav-menu{
   background-color: white;
-  margin-left: -100px;
+  margin-left: 50px;
 }
 /* menu position  */
 .navbar-nav {
-  margin-left: 500px;
+  margin-left: 700px;
   font-family: Bree Serif;
   color: black;
 }
@@ -638,6 +658,27 @@ font-size: 12px;
   position: absolute;
   top:12px;
   left: 650px;
+ z-index: -1;
+}
+.fa-search-btn{
+  position: absolute;
+  top:9px;
+  left: 640px;
+  width: 5px;
+  height: 5px;
+  background-color: #6fd0f4;
+  color: black;
+  border: none;
+  font-size: 10px;;
+}
+.o-btn{
+  position: relative;
+  top: -8px;
+  right: 4px;
+}
+.fa-search-btn:hover{
+  background-color: #6fd0f4;
+  color:black;
 }
 /* jumbotron */
 .jumbotron{

@@ -3,6 +3,11 @@ import {mycontext} from './../../App'
 import  { Redirect, useHistory , useLocation, Link} from 'react-router-dom'
 function Header(props){
     const valor = useContext(mycontext);
+    let history = useHistory()
+    const goFind = () =>{
+      const bus = document.getElementById("busqueda").value
+      history.push(`/buscar/${bus}`)
+    }
     return(
         <div>
         <nav className="nav-header navbar navbar-expand-lg navbar-expand-md navbar-light ">
@@ -16,8 +21,9 @@ function Header(props){
       <li class="nav-item input">
           <form class="form-group ">
           
-          <input type="text" class="form-control input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Buscar" size="30" /> 
-          <i class="fa fa-search" aria-hidden="true"></i>
+          <input type="text" class="form-control input" id="busqueda" aria-describedby="emailHelp" placeholder="Buscar" size="30" /> 
+          <button type="button" className="btn btn-primary fa-search-btn" onClick={goFind}><label className="o-btn">Ir</label></button>
+          <i  class="fa fa-search" aria-hidden="true"></i>
         </form>
       </li>
       <li class="nav-item">
