@@ -619,10 +619,10 @@ font-size: 12px;
 .precio{
   font-weight: bold;
   font-family:  Bree Serif;
-  font-size: 15px;
+  font-size: 20px;
 }
 .titulo{
-  font-size: 13px;
+  font-size: 18px;
   font-family:  Bree Serif;
 }
 .btn-cart{
@@ -763,7 +763,7 @@ font-size: 12px;
   position: absolute;
   top: 50px;
   left: 550px;
-  width: 200px;
+  width: 350px;
 }
 .btn-cart-pop{
   font-family:  Bree Serif;
