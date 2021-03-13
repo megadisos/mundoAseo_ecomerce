@@ -20,7 +20,7 @@ function Bseller(props){
           
               if(item.get_marc !== "mundo_aseo"){
                 return (
-                  <div key={item.id} className="col-lg-2 col-md-2 col-sm-12 mt-2 mb-2 product">
+                  <div key={item.id} className="col-lg-2 col-md-2 col-sm-12 mt-5 mb-5 product">
                       <center><img src={item.get_path} onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                       <p className="precio mt-1">${item.precio}</p>
                       <p className="titulo ">{item.titulo}</p>
