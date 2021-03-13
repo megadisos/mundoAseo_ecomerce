@@ -50,14 +50,7 @@ function Bseller(props){
                       </div>
               )
               }
-              else{
-                return (
-                  <div key={item.id}>
-                    <h1>{item.get_marc}</h1>
-                  </div>
-                )
-              }
-                   
+               
                 
             })}
       
