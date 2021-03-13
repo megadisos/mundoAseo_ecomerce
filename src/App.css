@@ -239,7 +239,7 @@ font-size: 12px;
   }
   .navbar-brand{
     position: absolute;
-    top: -4px;
+    top: 10px;
     left:-20px;
     height: 10px;
   }
