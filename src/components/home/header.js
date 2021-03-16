@@ -27,7 +27,7 @@ function Header(props){
         </form>
       </li>
       <li class="nav-item">
-      <a href="https://www.elmundodelaseo.com/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></a>
+      <a href="https://www.elmundodelaseo.com/carrito"><i class="fa fa-shopping-cart " style="font-size:15px;" aria-hidden="true"></i></a>
       </li>
       </ul>
         </nav>

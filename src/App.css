@@ -613,6 +613,9 @@ font-size: 12px;
  
  margin-right: 50px;
 }
+.nav-link{
+  font-size: 20px;
+}
 /*product-info*/
 .product{
   height: 250px;
@@ -658,7 +661,7 @@ font-size: 12px;
   font-size: 8px;
   margin-left: 100px;
   margin-top: 4px;
-  height: 15px;
+  height: 25px;
 }
 /*Carrito */
 .fa-shopping-cart{
