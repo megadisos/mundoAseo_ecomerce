@@ -91,7 +91,7 @@ function Producto(props){
             
                 return(
                     <div>
-                    <div className="row mt-2 bg-light " key={it.id}>
+                    <div className="row mt-2 bg-light mb-5 " key={it.id}>
                         <div className="col-12">
                             <center><h1 className="prd-name">{it.titulo}</h1></center>
                         </div>
@@ -105,14 +105,14 @@ function Producto(props){
                        
                         </div>
                         <div className="col-lg-6 col-md-6 col-dm-12">
-                            <h5 className="prd-name text-left">Descripcion</h5>
+                            <h5 className="prd-name text-left mb-2">Descripcion</h5>
                                 <p className="prd-name text-left">{it.descripcion}</p>
                                
                                 
                                 { it.opciones ?
                                  <form>
                                  <div class="form-group">
-                                <label for="tamanio">Tamaño</label>
+                                <label for="tamanio" className="text-left">Tamaño</label>
                                 <select onChange={e => setSelect(e.target.value)} class="form-control" id="tamanio">
                                     <option>Envase 250 Grs</option>
                                     <option>Envase 500 Grs</option>
