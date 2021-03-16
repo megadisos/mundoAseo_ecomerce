@@ -112,7 +112,7 @@ function Producto(props){
                                 { it.opciones ?
                                  <form>
                                  <div class="form-group">
-                                <label for="tamanio" className="text-left">Tamaño</label>
+                                <label for="tamanio" className="text-left">Presentación</label>
                                 <select onChange={e => setSelect(e.target.value)} class="form-control" id="tamanio">
                                     <option>Envase 250 Grs</option>
                                     <option>Envase 500 Grs</option>

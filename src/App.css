@@ -519,11 +519,16 @@ font-size: 12px;
 @media all and (min-width: 1200px) and (max-width: 3000px){
   /* nav header size */
 .nav-header{
-  height: 20px;
+  height: 40px;
   background-color: #61dafb;
   font-family: Bree Serif;
 }
-
+.text-left{
+  font-family: Bree Serif;
+ text-align: left;
+  font-weight: bold;
+  text-decoration: underline;
+}
 /* nav menu config*/
 .nav-menu{
   position: relative;
