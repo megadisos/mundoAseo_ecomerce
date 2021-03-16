@@ -14,7 +14,7 @@ function Menu(props){
   </button>
   <div className="navbar collapse navbar-collapse " id="navbarNavAltMarkup" >
     <div className="navbar-nav">
-      <a className={location.pathname === "/" ? "nav-item it-menu nav-link active":"nav-item nav-link active"}  href="#"><Link to="/">INICIO</Link> <span className="sr-only">(current)</span></a>
+      <a className={location.pathname === "/" ? "nav-item it-menu nav-link active":"nav-item nav-link active"}  href="https://www.elmundodelaseo.com/"><Link to="/">INICIO</Link> <span className="sr-only">(current)</span></a>
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           CATEGORIA
         </a>
@@ -26,8 +26,8 @@ function Menu(props){
           })}
           
         </div>
-      <a className={location.pathname === "/acerca" ? "nav-item it-menu nav-link":"nav-item nav-link active"} href="#"><Link to="/acerca">ACERCA</Link></a>
-      <a className={location.pathname === "/contacto" ? "nav-item  it-menu nav-link":"nav-item  nav-link"} href="#"><Link to="/contacto">CONTACTO</Link></a>
+      <a className={location.pathname === "/acerca" ? "nav-item it-menu nav-link":"nav-item nav-link active"} href="https://www.elmundodelaseo.com/acerca"><Link to="/acerca">ACERCA</Link></a>
+      <a className={location.pathname === "/contacto" ? "nav-item  it-menu nav-link":"nav-item  nav-link"} href="https://www.elmundodelaseo.com/contacto"><Link to="/contacto">CONTACTO</Link></a>
     </div>
   </div>
 </nav></center> 
