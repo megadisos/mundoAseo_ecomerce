@@ -44,7 +44,7 @@ function Brands(props){
             </div>
             </div>
     <div class="dropdown-divider"></div>
-      <div className="row">
+      <center><div className="row">
         
           {marca && marca.map(mc=>{
                     return (
@@ -58,7 +58,7 @@ function Brands(props){
             })}
          
           
-      </div>
+      </div></center>
     {/* </div>
     <div className="carousel-item">
     <h1>Hola</h1>
