@@ -235,7 +235,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><button type="button" onClick={evt => buttonClick(0)} class="btn btn-success">Finalizar compra</button></td>
+                                <td><button type="button" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 50000 ? getTotal() + 7000 : getTotal())} class="btn btn-success">Finalizar compra</button></td>
                                 
                                 </tr>
             </tbody>
