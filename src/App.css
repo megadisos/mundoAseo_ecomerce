@@ -650,10 +650,10 @@ font-size: 12px;
 }
 /* Buscador */
 .input{
-  font-size: 8px;
+  font-size: 15px;
   margin-left: 100px;
   margin-top: 4px;
-  height: 25px;
+  height: 10px;
 }
 /*Carrito */
 .fa-shopping-cart{
@@ -665,7 +665,7 @@ font-size: 12px;
 
 /*Links header*/
 .header-lk{
-  font-size: 20px;
+  font-size: 15px;
   margin-top:0px;
 }
 /* Icono buscador */
