@@ -527,7 +527,7 @@ font-size: 12px;
 /* nav menu config*/
 .nav-menu{
   background-color: white;
-  margin-left: 200px;
+  margin-left: 600px;
 }
 /* menu position  */
 .navbar-nav {
@@ -620,6 +620,7 @@ font-size: 12px;
   font-weight: bold;
   font-family:  Bree Serif;
   font-size: 20px;
+  color: #f39aa6;
 }
 .titulo{
   font-size: 18px;
