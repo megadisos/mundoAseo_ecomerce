@@ -690,7 +690,7 @@ font-size: 12px;
 .o-btn{
   position: absolute;
   top: 0px;
-  left: 0px;
+  left: 10px;
 }
 .fa-search-btn:hover{
   background-color: #6fd0f4;
