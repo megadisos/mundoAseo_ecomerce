@@ -26,7 +26,7 @@ function Bseller(props){
                       <p className="precio mt-1">${item.precio}</p>
                       <p className="titulo ">{item.titulo}</p>
                       {size < 17 ? <div><p></p> <p></p></div>: null}
-                      <button type="button" onClick={e => props.CartAdd(item.id,item.precio) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                      <button type="button" style={size <= 17 ? "margin-bottom:10px;" : "margin-bottom:0px;" } onClick={e => props.CartAdd(item.id,item.precio) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
 
                       
                       <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
