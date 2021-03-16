@@ -7,7 +7,7 @@ function Menu(props){
   const location = useLocation();
     return(
       
-       <center><img src={logo} className="img-fluid titu" width="200" height="80"></img><nav className="navbar nav-menu navbar-expand-lg navbar-expand-md ">
+       <center><img src={logo} className="img-fluid titu" width="200" height="80"></img><nav className="navbar nav-menu navbar-expand-lg navbar-expand-md ml-5">
   <a className="navbar-brand mt-3" href="#"></a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"><img src={menu} className="img-fluid" width="40" height="40"></img></span>
