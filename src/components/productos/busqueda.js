@@ -71,7 +71,7 @@ const CategoryLink = (name) => {
                 <h1 className="prd-name">Resultado Busqueda [{name}] </h1>
             </div>
         </div>
-        <div className="row">
+        <div className="row mb-5 mt-3">
             {items && items.map(item =>{
                 let titulo = item.titulo.toLowerCase()
                 if(titulo.includes(name.toLowerCase())){

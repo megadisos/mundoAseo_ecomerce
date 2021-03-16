@@ -70,7 +70,7 @@ const CategoryLink = (name) => {
             </div>
         </div>
         <center><div class="dropdown-divider in-div "></div></center>
-        <div className="row">
+        <div className="row mb-5">
             {items && items.filter(it => it.get_cat === categoria).map(ite =>{
                 return (
                     <div key={ite.id} className="col-lg-3 col-md-3 col-sm-3">

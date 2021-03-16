@@ -5,7 +5,7 @@ function Footer(props){
     return(
         <div>
         <div class="dropdown-divider"></div>
-        <center><div className="row  pie bg-light">
+        <center><div className="row  pie bg-light mt-5">
             <div className="col-lg-4 col-md-4 col-sm-12 ">
                 <h6 className="mr">Marcas</h6>
                 {props.marca && props.marca.map(ct =>{
