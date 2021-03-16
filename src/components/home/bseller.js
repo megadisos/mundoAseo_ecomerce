@@ -17,13 +17,15 @@ function Bseller(props){
             <center><div class="dropdown-divider in-div "></div></center>
             <div className="row">
             {items && items.map(item=>{
-          
+
               if(item.get_marc !== "mundo_aseo"){
+                let size = item.titulo.length
                 return (
                   <div key={item.id} className="col-lg-2 col-md-2 col-sm-12 mt-5 mb-5 product">
                       <center><img src={item.get_path} onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
                       <p className="precio mt-1">${item.precio}</p>
                       <p className="titulo ">{item.titulo}</p>
+                      {size < 17 ? <div><p></p> <p></p></div>: <h1>Hola</h1>}
                       <button type="button" onClick={e => props.CartAdd(item.id,item.precio) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
 
                       
