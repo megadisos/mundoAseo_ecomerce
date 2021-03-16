@@ -652,8 +652,8 @@ font-size: 12px;
 .input{
   font-size: 15px;
   margin-left: 100px;
-  margin-top: 4px;
-  height: 10px;
+  margin-top: 10px;
+  height: 12px;
 }
 /*Carrito */
 .fa-shopping-cart{
@@ -665,8 +665,8 @@ font-size: 12px;
 
 /*Links header*/
 .header-lk{
-  font-size: 15px;
-  margin-top:0px;
+  font-size: 10px;
+  margin-top:5px;
 }
 /* Icono buscador */
 .fa-search{
