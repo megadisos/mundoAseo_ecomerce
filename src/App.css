@@ -523,12 +523,7 @@ font-size: 12px;
   background-color: #61dafb;
   font-family: Bree Serif;
 }
-.text-left{
-  font-family: Bree Serif;
- text-align: left;
-  font-weight: bold;
-  text-decoration: underline;
-}
+
 /* nav menu config*/
 .nav-menu{
   position: relative;
@@ -670,7 +665,7 @@ font-size: 12px;
 
 /*Links header*/
 .header-lk{
-  font-size: 20px;
+  font-size: 10px;
   margin-top:0px;
 }
 /* Icono buscador */
