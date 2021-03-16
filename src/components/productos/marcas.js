@@ -36,7 +36,7 @@ function Marcas(props){
                    
                         return (
                         
-                            <center><img src={mc.get_path}  className="img-fluid mt-1 mb-3" alt="Responsive image" width="50" height="50"/></center>
+                            <center><img src={mc.get_path}  className="img-fluid mt-1 mb-3" alt="Responsive image" width="100" height="100"/></center>
                             
                         )
                     
