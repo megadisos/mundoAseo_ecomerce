@@ -73,8 +73,8 @@ const CategoryLink = (name) => {
         </div>
         <div className="row">
             {items && items.map(item =>{
-                let titulo = item.titulo
-                if(titulo.includes(name)){
+                let titulo = item.titulo.toLowerCase()
+                if(titulo.includes(name.toLowerCase())){
                     return(
                         <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3">
                             <center><img src={item.get_path}   onClick={()=> ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
