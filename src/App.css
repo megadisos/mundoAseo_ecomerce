@@ -653,7 +653,7 @@ font-size: 12px;
   font-size: 8px;
   margin-left: 100px;
   margin-top: 4px;
-  height: 15px;
+  height: 25px;
 }
 /*Carrito */
 .fa-shopping-cart{
@@ -665,7 +665,7 @@ font-size: 12px;
 
 /*Links header*/
 .header-lk{
-  font-size: 10px;
+  font-size: 20px;
   margin-top:0px;
 }
 /* Icono buscador */
