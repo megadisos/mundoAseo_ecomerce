@@ -12,7 +12,7 @@ function Carrito(props){
             let precio = getCookieValue(pr).split(",")[1]
             document.cookie = `${pr}=1,${precio}`
          })
-        let ftotal = getTotal() < 50000 ? getTotal() + 7000: getTotal()
+        let ftotal = getTotal() < 80000 ? getTotal() + 10000: getTotal()
         document.cookie = `total=${ftotal}`
         console.log("ESTE ES EL TOTAL "+ ftotal)
     }, [])
@@ -143,7 +143,7 @@ function Carrito(props){
             <center><div className="row container">
                 <div className="col-12">
                 <div class="alert alert-warning text-center prd-name" role="alert">
-    Envios gratis desde $50.000
+    Envios gratis desde $80.000
 </div>
                 </div>
             </div></center>
@@ -219,7 +219,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><label>Envio  ${getTotal() < 50000 ? 7000 : 0}</label></td>
+                                <td><label>Envio  ${getTotal() < 80000 ? 10000 : 0}</label></td>
                                 
                                 </tr>
             <tr>
@@ -227,7 +227,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><label >Total  ${isNaN(getTotal()) ? 0 : getTotal() < 50000 ? getTotal() + 7000 : getTotal()}</label></td>
+                                <td><label >Total  ${isNaN(getTotal()) ? 0 : getTotal() < 80000 ? getTotal() + 10000 : getTotal()}</label></td>
                                 
                                 </tr>
                                 <tr>
@@ -235,7 +235,7 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><button type="button" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 50000 ? getTotal() + 7000 : getTotal())} class="btn btn-success">Finalizar compra</button></td>
+                                <td><button type="button" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 80000 ? getTotal() + 10000 : getTotal())} class="btn btn-success">Finalizar compra</button></td>
                                 
                                 </tr>
             </tbody>
