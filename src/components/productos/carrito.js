@@ -4,7 +4,11 @@ import Menu from './../home/menu'
 import {mycontext} from './../../App'
 import Footer from '../home/footer'
 import  { Redirect, useHistory } from 'react-router-dom'
-
+import logo from './../../images/LETRERO.png'
+import nequi from './../../images/nequi.jpg'
+import what from './../../images/what.png'
+import banco from './../../images/banco.jpeg'
+import credit from './../../images/tarjetas.jpg'
 function Carrito(props){
     useEffect(() => {
         let prod = getCookieValue("prod").split(",")
@@ -126,8 +130,39 @@ function Carrito(props){
        
         history.push(`/carrito`)
     }
-    function buttonClick(total){
-        window.location.href = "https://api.whatsapp.com/send?phone=573195885466&text=Hola,%20este%20es%20mi%20pedido,%20producto1%20cant:%201,producto2%20cant:%201,%20porducto%202%20can,%20total%20:%20123%20"
+    function buttonClick(total,id){
+        if(id === 0){
+            let prod = {} 
+            let miCookie = document.cookie.split(";")
+            let tot = 0
+            let msg = "Hola%2C%20Quisiera%20comprar%20estos%20productos:"
+            miCookie.forEach(e =>{
+                if(parseInt(e[1])){
+                    items && items.filter(pr => pr.id === parseInt(e[1])).map(it=>{
+                     prod[it.titulo]  = e.split("=")[1]
+                    })
+                
+                    
+                } 
+            })
+            for (let [key, value] of Object.entries(prod)){
+                let temp = parseInt(value.split(",")[0]) * parseInt(value.split(",")[1])
+                tot = tot + temp
+                msg = msg + "%20"+key
+            }
+            prod["total"] = tot
+            if(prod["total"] > 80000){
+                prod["Envio"] = 0
+            }else{
+             prod["Envio"] = 10000
+             prod["total"] = prod["total"] + 10000
+            }
+            
+            window.location.href = `https://api.whatsapp.com/send?phone=573212096025&text=${msg}`
+        }else{
+            history.push(`/pagos/formulario/${id}`)
+        }
+        
     }
     const CategoryLink = (name) => {
         history.push(`/categoria/${name}`)
@@ -135,7 +170,9 @@ function Carrito(props){
     const MarcaLink = (name) => {
         history.push(`/marca/${name}`)
     }
-
+    const customStyle = {
+        "width" : "150px"
+    }
     return (
         <div >
             <Header />
@@ -171,18 +208,7 @@ function Carrito(props){
                     cont = cont + (parseInt(getCookieValue(it.id)) * it.precio)
                     if (it.opciones){
                         precio = parseInt(getCookieValue(`${it.id}`).split(",")[1])
-                        // if(getCookieValue(`pr${it.id}`) === "it.precio250"){
-                        //     precio = it.precio250
-            
-                        // }else if(getCookieValue(`pr${it.id}`) === "it.precio500"){
-                        //     precio = it.precio500
-                        // }else if(getCookieValue(`pr${it.id}`) === "it.precioGl"){
-                        //     precio = it.precioGl
-                        // }else if(getCookieValue(`pr${it.id}`) === "it.precioGr"){
-                        //     precio = it.precioGr
-                        // }else if(getCookieValue(`pr`) === "precio"){
-                        //     precio = it.precio
-                        // }
+                  
                     }else{
                         precio = it.precio
                     }
@@ -235,11 +261,50 @@ function Carrito(props){
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><button type="button" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 80000 ? getTotal() + 10000 : getTotal())} class="btn btn-success">Finalizar compra</button></td>
+                                <td><button type="button" data-toggle="modal"  data-target="#modal"  class="btn btn-success">Finalizar compra</button></td>
                                 
                                 </tr>
             </tbody>
-            </table>                         
+            </table>   
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel"><img src={logo} width="150" height="30"></img></h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body titulos" >
+  <label className="mb-2">Ya casi esta. Como deseas finalizar tu compra?</label>
+  <div className="row">
+      <div className="col-6">
+          <img src={nequi} width="150" height="120"></img>
+          <p><button type="button" data-dismiss="modal" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 80000 ? getTotal() + 10000 : getTotal(),1)} style={customStyle} class="btn btn-primary btn-cart-pop">Pagar por daviplata o nequi</button></p>
+
+      </div>
+      <div className="col-6">
+      <img src={what} width="70" className="mt-2 mb-5" height="70"></img>
+          <p><button type="button" data-dismiss="modal" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 80000 ? getTotal() + 10000 : getTotal(),0)} class="btn btn-primary btn-cart-pop">Hacer pedido por whatsapp</button></p>
+      </div>
+  </div>
+  <div className="row">
+      <div className="col-6">
+          <img src={banco} width="150" height="120"></img>
+          <p><button type="button"  data-dismiss="modal" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 80000 ? getTotal() + 10000 : getTotal(),2)} style={customStyle} class="btn btn-primary btn-cart-pop">Consignacion a cuenta bancaria</button></p>
+
+      </div>
+      <div className="col-6">
+      <img src={credit} width="70" className="mt-2 mb-5" height="70"></img>
+          <p><button type="button" data-dismiss="modal" onClick={evt => buttonClick(isNaN(getTotal()) ? 0 : getTotal() < 80000 ? getTotal() + 10000 : getTotal(),3)} style={customStyle} class="btn btn-primary btn-cart-pop">Pago con tarjeta de credito</button></p>
+      </div>
+  </div>
+</div>
+<div class="modal-footer">
+</div>
+</div>
+</div>
+</div>                      
             </div>
             </div></center>
             

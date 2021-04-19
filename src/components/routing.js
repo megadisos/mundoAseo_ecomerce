@@ -8,6 +8,8 @@ import Marca from './productos/marcas'
 import Carrito from './productos/carrito'
 import Acerca from  './home/acerca'
 import Contacto from  './home/contacto'
+import Formulario from './pagos/formulario_pago.js'
+import Confirmacion from './pagos/confirmacion.js'
 function Routing(props){
     return(
         <Router>
@@ -20,6 +22,8 @@ function Routing(props){
             <Route path="/acerca" component={Acerca}></Route>
             <Route path="/contacto" component={Contacto}></Route>
             <Route path="/buscar/:namProd" component={Busqueda}></Route>
+            <Route path="/pagos/formulario/:id" component={Formulario}></Route>
+            <Route path="/pagos/confirmacion/:id/:name/:address/:depto/:citi/:cod" component={Confirmacion}></Route>
         </Switch>
     </Router>
     )

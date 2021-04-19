@@ -7,6 +7,7 @@ import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
 import Mundo from './../../images/MUNDO.png'
 import  { useHistory } from 'react-router-dom'
+import logo from './../../images/LETRERO.png'
 
 function Marcas(props){
     const categoria = props.match.params.catMar
@@ -54,7 +55,26 @@ function Marcas(props){
                             <p className="precio mt-1">${ite.precio}</p>
                             <p className="titulo ">{ite.titulo}</p>
                            
-                            <button type="button" onClick={e => props.CartAdd(ite.id) } class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <button type="button" onClick={e => props.CartAdd(ite.id) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel"><img src={logo} width="150" height="30"></img></h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body titulos" >
+  El producto fue agregado a tu carrito. Que quieres hacer?
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary btn-cart-cont"  data-dismiss="modal">Seguir comprando</button>
+  <button type="button" onClick={e=> window.location.href = "https://www.elmundodelaseo.com/carrito" } class="btn btn-primary btn-cart-pop">Ir al carrito</button>
+</div>
+</div>
+</div>
+</div>
                 </div>
                 )
             })}

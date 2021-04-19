@@ -13,6 +13,7 @@ function App() {
  const [select,setSelect] = useState("Envase 250 Grs")
  const [marca, setMarca] = useState([])
  const [cat, setCat] = useState([])
+ const [ped,setPed] = useState([])
  const CategoryLink = (name) => {
   history.push(`/categoria/${name}`)
 }
@@ -50,6 +51,17 @@ fetch("https://www.nabtastore.com.co/api-ma/Productos/",{
                   .then( resp => setCat(resp))
                   .catch( error => console.log(error))
                   .then( resp => console.log("ESTA ES LA RESPUESTA DEL CATI" + resp))
+fetch("https://www.nabtastore.com.co/api-ma/Pedidos/",{
+                    method: 'GET',
+                    headers: {
+                      'Content-Type':'application/json',
+                      'Authorization': `Token 427bd7635e8f0a0cf4c5b8317e9615044e344e92`
+                    }
+                  })
+                  .then( resp => resp.json())
+                  .then( resp => setPed(resp))
+                  .catch( error => console.log(error))
+                  .then( resp => console.log(resp))                 
  }, [])
 // useEffect(() => {
 //   fetch("http://127.0.0.1:8000/api-ma/Items/",{
@@ -86,10 +98,22 @@ fetch("https://www.nabtastore.com.co/api-ma/Productos/",{
 //         .then( resp => setCat(resp))
 //         .catch( error => console.log(error))
 //         .then( resp => console.log(resp))
+//   fetch("http://127.0.0.1:8000/api-ma/Pedidos/",{
+//           method: 'GET',
+//           headers: {
+//             'Content-Type':'application/json',
+//             'Authorization': `Token 8056a54741f0eda31a7780ad71d24ef9667ce71c`
+//           }
+//         })
+//         .then( resp => resp.json())
+//         .then( resp => setPed(resp))
+//         .catch( error => console.log(error))
+//         .then( resp => console.log(resp))
 // }, [])
 
+
   return (
-    <mycontext.Provider value={{item: [item,setItem],marcai:[marca,setMarca],selecti:[select,setSelect],cati:[cat,setCat],cl:CategoryLink}}>
+    <mycontext.Provider value={{item: [item,setItem],marcai:[marca,setMarca],selecti:[select,setSelect],cati:[cat,setCat],pedi:[ped,setPed],cl:CategoryLink}}>
       <CookiesProvider>
       <Routing />
       </CookiesProvider>
