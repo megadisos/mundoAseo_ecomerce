@@ -120,7 +120,7 @@ function Confirmacion(props){
                     <div class="card ml-5 mr-5 mb-5">
   <h5 class="card-header"><img src={nequi} width="60" height="60"></img>Pago por Nequi o Daviplata</h5>
   <div class="card-body">
-    <p class="card-text prd-name">Puedes pagar por cualquiera de estos dos medios con el numero <label style={texto}>3212046055</label></p>
+    <p class="card-text prd-name">Tu total es ${tot}, puedes pagar por cualquiera de estos dos medios con el numero <label style={texto}>3212046055</label></p>
     <p class="card-text prd-name">Recuerda tienes 24 horas para ser el pago si no la reserva sera cancelada,  una vez lo hayas realizado envia la evidencia al mismo numero por whatsapp.</p>
   </div>
 </div>
@@ -146,7 +146,7 @@ function Confirmacion(props){
                     <div class="card ml-5 mr-5 mb-5">
   <h5 class="card-header"><img src={banco} width="80" height="60"></img>Consignación a cuenta bancolombia</h5>
   <div class="card-body">
-    <p class="card-text prd-name">Puedes consignar  a la cuenta de ahorros <label style={texto}>03126008754</label> a nombre de William Hernandez. </p>
+    <p class="card-text prd-name">Tu total es ${tot}, puedes consignar  a la cuenta de ahorros <label style={texto}>03126008754</label> a nombre de William Hernandez. </p>
     <p class="card-text prd-name">Recuerda tienes <label style={texto}>24</label> horas para hacer el pago si no la reserva sera cancelada, una vez lo hayas realizado envia la evidencia al numero <label style={texto}>3212046055.</label></p>
   </div>
 </div>
