@@ -10,7 +10,7 @@ import mision from './../../images/mision.png'
 import vision from './../../images/vision.png'
 import nequi from './../../images/nequi.jpg'
 import what from './../../images/what.png'
-import banco from './../../images/banco.jpeg'
+import banco from './../../images/banco.jpg'
 import credit from './../../images/tarjetas.jpg'
 
 function Confirmacion(props){
