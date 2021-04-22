@@ -114,8 +114,8 @@ function Producto(props){
                                  <div class="form-group">
                                 <label for="tamanio" className="text-left">Presentación</label>
                                 <select onChange={e => setSelect(e.target.value)} class="form-control" id="tamanio">
-                                    <option>Envase 250 Grs</option>
                                     <option>Envase 500 Grs</option>
+                                    <option>Envase 800 Grs</option>
                                     <option>Galon(4 litros)</option>
                                     <option>Garrafa (20 litros)</option>
                                 </select>
