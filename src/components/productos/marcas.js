@@ -26,6 +26,25 @@ function Marcas(props){
   const MarcaLink = (name) => {
     history.push(`/marca/${name}`)
 }
+const CartAdd = (id,precio) =>{
+        
+  var arr = [id]
+  var current = getCookieValue("prod")
+  if (current === ""){
+      document.cookie = `prod=${id}`
+      document.cookie = `${id}=1,${precio}`
+      
+  }else{
+      if(checkRepeated(id) === false){
+          document.cookie = `prod=${current},${id}`
+          document.cookie = `${id}=1,${precio}`
+          
+      }
+      
+  }
+  
+  
+}
     return(
         <div>
         <Header />
@@ -55,7 +74,7 @@ function Marcas(props){
                             <p className="precio mt-1">${ite.precio}</p>
                             <p className="titulo ">{ite.titulo}</p>
                            
-                            <button type="button" onClick={e => props.CartAdd(ite.id) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            <button type="button" onClick={e => CartAdd(ite.id,ite.precio) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
                             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
