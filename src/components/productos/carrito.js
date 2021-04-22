@@ -7,7 +7,7 @@ import  { Redirect, useHistory } from 'react-router-dom'
 import logo from './../../images/LETRERO.png'
 import nequi from './../../images/nequi.jpg'
 import what from './../../images/what.png'
-import banco from './../../images/banco.jpeg'
+import banco from './../../images/banco.jpg'
 import credit from './../../images/tarjetas.jpg'
 function Carrito(props){
     useEffect(() => {
