@@ -23,8 +23,8 @@ function Confirmacion(props){
     const name = props.match.params.name
     const id = props.match.params.id
     const address = props.match.params.address
-    const depto = props.match.params.depto
-    const city = props.match.params.citi
+    const email = props.match.params.email
+    const cel = props.match.params.cel
     const cod = props.match.params.cod
    
     useEffect(() => {
@@ -58,8 +58,8 @@ function Confirmacion(props){
             "tipo" : id,
             "estado" : "1",
             "nombre" : name,
-            "ciudad" : city,
-            "depto" : depto,
+            "celular" : cel,
+            "email" : email,
             "pedido" : JSON.stringify(prod),
             "address" : address
         }

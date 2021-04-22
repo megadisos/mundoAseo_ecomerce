@@ -50,7 +50,7 @@ function Contacto(props){
             </div>
         </div>
         <div className="row mb-5">
-            <div className="col-12"><center><img src={what} width="20" height="20"></img><a style={mystyle} href="https://api.whatsapp.com/send?phone=573212096025&text=Hola%2C%20quisiera%20infromacion">3212096025</a></center></div>
+            <div className="col-12"><center><img src={what} width="20" height="20"></img><a style={mystyle} href="https://api.whatsapp.com/send?phone=573212046025&text=Hola%2C%20quisiera%20infromacion">3212046025</a></center></div>
         </div>
         <Footer marca={marca} cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
         </div>

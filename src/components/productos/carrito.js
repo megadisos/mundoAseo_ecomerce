@@ -158,7 +158,7 @@ function Carrito(props){
              prod["total"] = prod["total"] + 10000
             }
             
-            window.location.href = `https://api.whatsapp.com/send?phone=573212096025&text=${msg}`
+            window.location.href = `https://api.whatsapp.com/send?phone=573212046025&text=${msg}`
         }else{
             history.push(`/pagos/formulario/${id}`)
         }

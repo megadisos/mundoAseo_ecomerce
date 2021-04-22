@@ -19,8 +19,8 @@ function Formulario(props){
     const [cod,setCod] = useState("")
     const id = props.match.params.id
     const [name, setName] = useState("");
-    const [depto, setDepto] = useState("");
-    const [city, setCity] = useState("");
+    const [email, setEmail] = useState("");
+    const [cel, setCel] = useState("");
     const [dir, setDir] = useState("");
 
     const CategoryLink = (name) => {
@@ -50,7 +50,7 @@ function Formulario(props){
                 
             }
         }
-        history.push(`/pagos/confirmacion/${id}/${name}/${dir}/${depto}/${city}/${"REF_"+numberCode.toString()}`)
+        history.push(`/pagos/confirmacion/${id}/${name}/${dir}/${email}/${cel}/${"REF_"+numberCode.toString()}`)
        
         
 
@@ -74,23 +74,13 @@ function Formulario(props){
     <label for="name">Nombre Completo:</label>
     <input type="text" onChange={e => setName(e.target.value)} required class="form-control" id="form_name"  placeholder="Digite Nombre"></input>
   </div>
- 
- 
-  <div class="form-check">
-  <label for="dep">Departamento</label>
-    <select id="sel1" onChange={e => setDepto(e.target.value)} id="dept" required class="form-control" >
-    <option >Selecciona Ciudad</option>
-        <option >Cundinamarca</option>
-        <option >Bogotá D.C</option>
-    </select>
+  <div class="form-group ">
+    <label for="email">Email:</label>
+    <input type="email" onChange={e => setEmail(e.target.value)} required class="form-control" id="form_email"  placeholder="Digite Email"></input>
   </div>
-  <div class="form-check">
-  <label for="dep">Ciudad:</label>
-    <select id="ciudad" onChange={e => setCity(e.target.value)}  required class="form-control" id="sel2">
-        <option >Selecciona Ciudad</option>
-        <option  >Fuza</option>
-        <option  >Suba</option>
-    </select>
+  <div class="form-group ">
+    <label for="number">Celular:</label>
+    <input type="number" onChange={e => setCel(e.target.value)} required class="form-control" id="form_cel"  placeholder="Digite Cel"></input>
   </div>
   <div class="form-group">
     <label for="Direccion">Direccion</label>

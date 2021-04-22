@@ -23,7 +23,7 @@ function Routing(props){
             <Route path="/contacto" component={Contacto}></Route>
             <Route path="/buscar/:namProd" component={Busqueda}></Route>
             <Route path="/pagos/formulario/:id" component={Formulario}></Route>
-            <Route path="/pagos/confirmacion/:id/:name/:address/:depto/:citi/:cod" component={Confirmacion}></Route>
+            <Route path="/pagos/confirmacion/:id/:name/:address/:email/:cel/:cod" component={Confirmacion}></Route>
         </Switch>
     </Router>
     )
