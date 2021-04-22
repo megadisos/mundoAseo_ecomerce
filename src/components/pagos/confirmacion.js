@@ -21,6 +21,7 @@ function Confirmacion(props){
     const [cat, setCat] = cati
     const [ped, setPedi] = pedi
     const name = props.match.params.name
+    const [tot,setTot] = useState("")
     const id = props.match.params.id
     const address = props.match.params.address
     const email = props.match.params.email
@@ -52,7 +53,7 @@ function Confirmacion(props){
         prod["total"] = prod["total"] + 10000
        }
        console.log(document.cookie)
-       console.log(prod)
+       setTot(prod["total"])
         const dataToSend = {
             "codigo" : cod,
             "tipo" : id,
