@@ -26,6 +26,23 @@ function Marcas(props){
   const MarcaLink = (name) => {
     history.push(`/marca/${name}`)
 }
+
+function getCookieValue(name) {
+  let arrays = []
+  let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
+  return result ? result.pop() : ""
+}
+function checkRepeated(id){
+  var data= getCookieValue("prod").split(",")
+  for (let i of data){
+      if (id === parseInt(i)){
+          return true
+      }
+      console.log("Esta es la data " + i) 
+  }
+  return false
+  
+} 
 const CartAdd = (id,precio) =>{
         
   var arr = [id]
