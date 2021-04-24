@@ -10,7 +10,7 @@ import Acerca from  './home/acerca'
 import Contacto from  './home/contacto'
 import Formulario from './pagos/formulario_pago.js'
 import Confirmacion from './pagos/confirmacion.js'
-import Sitio from './../home/sitio.js'
+import Sitio from './home/sitio.js'
 function Routing(props){
     return(
         <Router>
