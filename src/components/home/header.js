@@ -20,13 +20,13 @@ function Header(props){
         <a class="nav-link header-lk" data-toggle="modal" data-target="#exampleModal" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Cra. 114 #152d-76, Bogotá <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link header-lk" href="#"><i class="fa fa-phone" aria-hidden="true"></i> <a style={stylebas} href="https://api.whatsapp.com/send?phone=573212046055&text=Hola%2C%20quisiera%20infromacion">3212046055</a></a>
+        <a class="nav-link header-lk" href="#"><a style={stylebas} href="https://api.whatsapp.com/send?phone=573212046055&text=Hola%2C%20quisiera%20infromacion">3212046055</a></a>
       </li>
       <li class="nav-item">
         <a class="nav-link header-lk" href="#"><a style={stylebas} href="https://api.whatsapp.com/send?phone=573115291717&text=Hola%2C%20quisiera%20infromacion">3115291717</a></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link header-lk" href="#">7962392</a>
+        <a class="nav-link header-lk" href="#" style={stylebas}>7962392</a>
       </li>
       <li class="nav-item input">
           <form class="form-group ">
