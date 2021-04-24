@@ -33,6 +33,9 @@ function Carrito(props){
     let history = useHistory()
     let cont = 0
     let pos = 0
+    const colorCarrito = {
+        "background-color": "#009fe3"
+    }
     function getCookieValue(name) {
         let arrays = []
         let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
@@ -158,7 +161,7 @@ function Carrito(props){
              prod["total"] = prod["total"] + 10000
             }
             
-            window.location.href = `https://api.whatsapp.com/send?phone=573212046025&text=${msg}`
+            window.location.href = `https://api.whatsapp.com/send?phone=573212046055&text=${msg}`
         }else{
             history.push(`/pagos/formulario/${id}`)
         }
@@ -179,8 +182,8 @@ function Carrito(props){
             <Menu  cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
             <center><div className="row container">
                 <div className="col-12">
-                <div class="alert alert-warning text-center prd-name" role="alert">
-    Envios gratis desde $80.000
+                <div style={colorCarrito} class="alert alert-warning text-center prd-name" role="alert">
+    Envios gratis desde $80.000, Si estas fuera de Bogotá el precio del envio puede aumentar.
 </div>
                 </div>
             </div></center>

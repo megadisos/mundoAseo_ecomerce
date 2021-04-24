@@ -17,10 +17,16 @@ function Header(props){
         <nav className="nav-header navbar navbar-expand-lg navbar-expand-md navbar-light ">
           <ul class="navbar-nav mr-auto header-info">
       <li class="nav-item active">
-        <a class="nav-link header-lk" data-toggle="modal" data-target="#exampleModal" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Cra. 114 #152d-82, Bogotá <span class="sr-only">(current)</span></a>
+        <a class="nav-link header-lk" data-toggle="modal" data-target="#exampleModal" href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Cra. 114 #152d-76, Bogotá <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link header-lk" href="#"><i class="fa fa-phone" aria-hidden="true"></i> <a style={stylebas} href="https://api.whatsapp.com/send?phone=573212046025&text=Hola%2C%20quisiera%20infromacion">3212046025</a></a>
+        <a class="nav-link header-lk" href="#"><i class="fa fa-phone" aria-hidden="true"></i> <a style={stylebas} href="https://api.whatsapp.com/send?phone=573212046055&text=Hola%2C%20quisiera%20infromacion">3212046055</a></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link header-lk" href="#"><i class="fa fa-phone" aria-hidden="true"></i> <a style={stylebas} href="https://api.whatsapp.com/send?phone=573115291717&text=Hola%2C%20quisiera%20infromacion">3115291717</a></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link header-lk" href="#"><i class="fa fa-phone" aria-hidden="true"></i>7962392</a>
       </li>
       <li class="nav-item input">
           <form class="form-group ">
@@ -46,7 +52,7 @@ function Header(props){
                 </button>
               </div>
               <div class="modal-body">
-              <div className="map"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Kra%20114%20No%20152d-82+(El%20mundo%20del%20aseo)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
+              <div className="map"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Kra%20114%20No%20152d-76+(El%20mundo%20del%20aseo)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>
               </div>
              
             </div>
