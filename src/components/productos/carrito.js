@@ -34,7 +34,8 @@ function Carrito(props){
     let cont = 0
     let pos = 0
     const colorCarrito = {
-        "background-color": "#009fe3"
+        "background-color": "#009fe3",
+        "color":"black"
     }
     function getCookieValue(name) {
         let arrays = []
