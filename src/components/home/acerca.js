@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie'
 import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
 import  { useHistory } from 'react-router-dom'
-import mision from './../../images/mision.png'
+import mision from './../../images/MUNDO.png'
 import vision from './../../images/vision.png'
 function Acerca(props){
     let history = useHistory()
