@@ -42,7 +42,7 @@ function Acerca(props){
         </div>
         <div className="row">
             <div className="col-12">
-                <center><img src={vision} width="40" height="40"></img><h4 className="prd-name">Nuestra Vision </h4></center>
+                <center><img src={vision} width="60" height="60"></img><h4 className="prd-name">Nuestra Vision </h4></center>
             </div>
         </div>
         <div className="row mb-5">
