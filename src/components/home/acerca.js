@@ -7,7 +7,7 @@ import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
 import  { useHistory } from 'react-router-dom'
 import mision from './../../images/MUNDO.png'
-import vision from './../../images/vision.png'
+import vision from './../../images/mune.png'
 function Acerca(props){
     let history = useHistory()
     const {item, marcai ,cati,cl } = useContext(mycontext)
