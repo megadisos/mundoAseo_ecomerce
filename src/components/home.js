@@ -127,24 +127,22 @@ function Home(props){
   
     return(
         <div>
-            <div className="container-fluid">
-            <Header />
-        </div>
-        <div className="container cat">
+            
+            <Header className="mb-4"/>
+       
             <Menu cat={cat} CategoryLink={CategoryLink}/>
-        </div>
-        <div className="container-fluid">
+       
             <Slide publ={publ} MundoLink = {MundoLink}/>
-        </div>
-        <div className="container">
+      
             <Category CategoryLink={CategoryLink}/>
+        
             <Brands MarcaLink={MarcaLink} />
+         
             <Featured CartAdd={CartAdd} ProductLink={ProductLink} />
+       
             <Bseller CartAdd={CartAdd} ProductLink={ProductLink}/>
-        </div>
-        <div className="container-fluid">
-            <Footer CategoryLink={CategoryLink} MarcaLink={MarcaLink} cat={cat} marca={marca}/>
-        </div>
+        
+            <Footer CategoryLink={CategoryLink} MarcaLink={MarcaLink} cat={cat} marca={marca}/> 
         </div>
     )
 }

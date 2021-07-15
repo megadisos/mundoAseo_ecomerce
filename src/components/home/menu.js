@@ -2,35 +2,55 @@ import React, {useState} from 'react'
 import logo from './../../images/LETRERO.png'
 import menu from './../../images/menu.png'
 import  { Redirect, useHistory , useLocation, Link} from 'react-router-dom'
-
+import  {Container, Row, Col,Navbar,NavDropdown,Nav,Image} from 'react-bootstrap' 
 function Menu(props){
   const location = useLocation();
+  const styleLink = {
+    "text-decoration":"none",
+    "color":"black",
+    
+  }
+  const styleCurrent = {
+    "text-decoration":"none",
+    "color":"black",
+    "background":"#b5d485",
+  }
     return(
-      
-       <center><img src={logo} className="img-fluid titu" width="200" height="80"></img><nav className="navbar nav-menu navbar-expand-lg navbar-expand-md ml-5">
-  <a className="navbar-brand mt-3" href="#"></a>
-  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span className="navbar-toggler-icon"><img src={menu} className="img-fluid" width="40" height="40"></img></span>
-  </button>
-  <div className="navbar collapse navbar-collapse " id="navbarNavAltMarkup" >
-    <div className="navbar-nav">
-      <a className={location.pathname === "/" ? "nav-item it-menu nav-link active":"nav-item nav-link active"}  href="https://www.elmundodelaseo.com/"><Link to="/">INICIO</Link> <span className="sr-only">(current)</span></a>
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          CATEGORIA
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          {props.cat && props.cat.map(ct =>{
+      <Container >
+        <Row >
+          <Col xs={8} md={8} lg={8} >
+          <Image  src={logo} width="200" className="mt-3"></Image>
+          </Col>
+          <Col xs={4} md={4} lg={4} >
+          <Navbar bg="light" expand="lg">
+         
+    <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto"  >
+        <Nav.Link className={ location.pathname === "/" ? "link-selected":"link"}><Link to="/" style={styleLink} >Inicio</Link> <span className="sr-only">(current)</span></Nav.Link>
+        <NavDropdown title="Categoria" id="basic-nav-dropdown" className="link">
+
+        {props.cat && props.cat.map(ct =>{
               return(
-                <a class="dropdown-item" onClick={()=> props.CategoryLink(ct.nombre)} >{ct.nombre}</a>
+                <NavDropdown.Item>
+                <a onClick={()=> props.CategoryLink(ct.nombre)} >{ct.nombre}</a>
+                </NavDropdown.Item>
               )
           })}
-          
-        </div>
-      <a className={location.pathname === "/acerca" ? "nav-item it-menu nav-link":"nav-item nav-link active"} href="https://www.elmundodelaseo.com/acerca"><Link to="/acerca">ACERCA</Link></a>
-      <a className={location.pathname === "/contacto" ? "nav-item  it-menu nav-link":"nav-item  nav-link"} href="https://www.elmundodelaseo.com/contacto"><Link to="/contacto">CONTACTO</Link></a>
-    </div>
-  </div>
-</nav></center> 
+
+        </NavDropdown>
+        <Nav.Link className={ location.pathname === "/acerca" ? "link-selected":"link"} ><Link to="/acerca" style={styleLink}>Acerca</Link></Nav.Link>
+        <Nav.Link className={ location.pathname === "/contacto" ? "link-selected":"link"}><Link to="/contacto"  style={styleLink}>Contacto</Link></Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+  
+</Navbar>
+          </Col>
+        </Row>
+      </Container>
+    
+   
+   
     )
 }
 export default Menu

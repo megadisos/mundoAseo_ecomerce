@@ -7,6 +7,7 @@ import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
 import  { useHistory } from 'react-router-dom'
 import logo from './../../images/LETRERO.png'
+import  {Container, Row, Col,Navbar,NavDropdown,Nav,Image,Button} from 'react-bootstrap' 
 function Categoria(props){
     
     const categoria = props.match.params.catName
@@ -61,24 +62,40 @@ const CategoryLink = (name) => {
     history.push(`/marca/${name}`)
 }
     return(
-        <div>
+        <Container fluid>
         <Header />
+     
         <Menu cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
-        <div className="row">
-            <div className="col-12">
+        <Row>
+            <Col>
                 <center><h1 className="prd-name">{categoria}</h1></center>
-            </div>
-        </div>
+            </Col>
+        </Row>
         <center><div class="dropdown-divider in-div "></div></center>
-        <div className="row mb-5">
+        <center><Row className="mb-5">
             {items && items.filter(it => it.get_cat === categoria).map(ite =>{
                 return (
-                    <div key={ite.id} className="col-lg-3 col-md-3 col-sm-3">
-                     <center><img src={ite.get_path} onClick={()=> ProductLink(ite.id,ite.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
+                    <Col key={ite.id} xs={12} md={12} lg={3} className="mt-2">
+                        <Row>
+                            <Col>
+                            <center><Image src={ite.get_path} onClick={()=> ProductLink(ite.id,ite.titulo)} class="img-fluid mt-2 img-prods" width="150" height="150" ></Image></center>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
                             <p className="precio mt-1">${ite.precio}</p>
                             <p className="titulo ">{ite.titulo}</p>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                            <Button type="button" onClick={e => CartAdd(ite.id,ite.precio) } data-toggle="modal"  data-target="#modal" variant="outline-primary">Agregar al carrito</Button>
+                            </Col>
+                        </Row>
+                    
                            
-                            <button type="button" onClick={e => CartAdd(ite.id,ite.precio) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                           
+                            
                             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
@@ -98,13 +115,13 @@ const CategoryLink = (name) => {
 </div>
 </div>
 </div>
-                </div>
+                </Col>
                 )
             })}
            
-        </div>
+        </Row></center>
         <Footer marca={marca} cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
-        </div>
+        </Container>
     )
 }
 export default Categoria

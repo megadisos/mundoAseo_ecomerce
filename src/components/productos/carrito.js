@@ -9,6 +9,7 @@ import nequi from './../../images/nequi.jpg'
 import what from './../../images/what.png'
 import banco from './../../images/banco.jpg'
 import credit from './../../images/tarjetas.jpg'
+import  {Container, Row, Col,Navbar,NavDropdown,Nav,Image,Button} from 'react-bootstrap' 
 function Carrito(props){
     useEffect(() => {
         let prod = getCookieValue("prod").split(",")
@@ -178,22 +179,22 @@ function Carrito(props){
         "width" : "150px"
     }
     return (
-        <div >
+        <Container fluid>
             <Header />
             <Menu  cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
-            <center><div className="row container">
-                <div className="col-12">
+            <center><Row>
+                <Col>
                 <div style={colorCarrito} class="alert alert-warning text-center prd-name" role="alert">
     Envios gratis desde $80.000, Si estas fuera de Bogotá el precio del envio puede aumentar.
 </div>
-                </div>
-            </div></center>
+                </Col>
+            </Row></center>
           
-            <div className="row">
-                <div className="col-12 prd-name"><center><h1>Carrito</h1></center></div>
-            </div>
-          <center><div className="row mt-3 container">
-          <div  className="col-12">
+            <Row>
+                <Col  className="prd-name"><center><h1>Carrito</h1></center></Col>
+            </Row>
+          <center><Row className="row mt-3 container">
+          <Col >
 
             <table class="table prd-name">
             <thead>
@@ -309,14 +310,14 @@ function Carrito(props){
 </div>
 </div>
 </div>                      
-            </div>
-            </div></center>
+            </Col>
+            </Row ></center>
             
 
             
-          <Footer marca={marca} cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
+          <Footer marca={marca} cat={cat} className="mt-5" CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
           
-        </div>
+        </Container>
     )
 }
 export default Carrito

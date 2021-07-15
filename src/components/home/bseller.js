@@ -2,31 +2,47 @@ import React, {useState,useContext} from 'react'
 import image from './../../images/im1.jpg'
 import {mycontext} from './../../App'
 import logo from './../../images/LETRERO.png'
+import  {Container, Row, Col,Navbar,NavDropdown,Nav,Image,Button} from 'react-bootstrap' 
 function Bseller(props){
     const {item, marcai } = useContext(mycontext)
     const [items, setItems] = item
     const [marca, setMarca] = marcai
    
     return(
-        <div>
-            <div className="row text-center mt-2">
-            <div className="col-12">
+        <Container>
+            <Row className="text-center mt-2">
+            <Col>
                 <h2 className="titulos"> <i class="fa fa-shopping-bag icolor" aria-hidden="true"></i> Nuestros productos</h2>
-            </div>
-            </div>
+            </Col>
+            </Row>
             <center><div class="dropdown-divider in-div "></div></center>
-            <div className="row mb-5">
+            <Row className="mb-5">
             {items && items.map(item=>{
 
               if(item.get_marc !== "mundo_aseo"){
                 let size = item.titulo.length
                 return (
-                  <div key={item.id} className="col-lg-2 col-md-2 col-sm-12 mt-5 mb-5 product">
-                      <center><img src={item.get_path} onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
+                  <Col key={item.id} xs={12} md={12} lg={3} className="text-center mt-5 mb-5">
+                    <Row>
+                      <Col>
+                      <Image src={item.get_path} onClick={()=> props.ProductLink(item.id,item.titulo)} width="150" height="150" ></Image>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
                       <p className="precio mt-1">${item.precio}</p>
                       <p className="titulo ">{item.titulo}</p>
+                      </Col>
+                    </Row>
+                    <Row>
+                      <Col>
+                      <Button type="button" onClick={e => props.CartAdd(item.id,item.precio) } data-toggle="modal"  data-target="#modal" variant="outline-primary">Agregar al carrito</Button>
+                      </Col>
+                    </Row>
+                
                      
-                      <button type="button" onClick={e => props.CartAdd(item.id,item.precio) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                     
+  
 
                       
                       <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -49,15 +65,15 @@ function Bseller(props){
 </div>
 </div>
 
-                      </div>
+                      </Col>
               )
               }
                
                 
             })}
       
-            </div>
-        </div>
+            </Row>
+        </Container>
     )
 }
 export default Bseller

@@ -1,18 +1,19 @@
 import React, {useState} from 'react'
 import fondo from './../../images/mainpub.png'
+import  {Jumbotron,Image} from 'react-bootstrap' 
 function Slide(props){
     return(
-        <div class="jumbotron">
+        <Jumbotron>
             {props.publ && props.publ.filter(pb => pb.id === 1).map(pub =>{
                 return (
-                    <div>
-                    <img src={pub.get_path} onClick={()=> props.MundoLink()} className="img-fluid img-pr"></img>
+                    <div key={pub.id}>
+                    <Image src={pub.get_path} width="100%" onClick={()=> props.MundoLink()} className="img-fluid"></Image>
                    
                     </div>
                 )
             })}
   
-</div>
+</Jumbotron>
     )
 }
 export default Slide

@@ -8,6 +8,7 @@ import Footer from '../home/footer'
 import Mundo from './../../images/MUNDO.png'
 import  { useHistory } from 'react-router-dom'
 import logo from './../../images/LETRERO.png'
+import  {Container, Row, Col,Navbar,NavDropdown,Nav,Image,Button} from 'react-bootstrap' 
 
 function Marcas(props){
     const categoria = props.match.params.catMar
@@ -63,40 +64,52 @@ const CartAdd = (id,precio) =>{
   
 }
     return(
-        <div>
-        <Header />
-        <Menu cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
-        <div className="row">
-        <div className="col-12">
+        <Container fluid>
+            <Header />
+            <Menu cat={cat} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
+            <Row>
+              <Col>
            
-                {marca && marca.filter(m => m.nombre === categoria).map(mc=>{
-                   
+                  {marca && marca.filter(m => m.nombre === categoria).map(mc=>{ 
                         return (
                         
-                            <center><img src={mc.get_path}  className="img-fluid mt-1 mb-3" alt="Responsive image" width="100" height="100"/></center>
+                           <center> <Image src={mc.get_path}  width="150" height="150"></Image></center>
                             
                         )
                     
                    
-                })}
-               </div>
+                  })}
+              </Col>
             
-        </div>
+            </Row>
         <center><div class="dropdown-divider in-div "></div></center>
-        <div className="row mt-2 mb-5">
+        <center><Row className="mt-2 mb-5">
             {items && items.filter(it => it.get_marc === categoria).map(ite =>{
                 return (
-                    <div key={ite.id} className="col-lg-3 col-md-3 col-sm-3">
-                     <center><img src={ite.get_path} onClick={()=> ProductLink(ite.id,ite.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
-                            <p className="precio mt-1">${ite.precio}</p>
-                            <p className="titulo ">{ite.titulo}</p>
+                    <Col key={ite.id} xs={12} md={12} lg={3}>
+                      <Row>
+                        <Col>
+                        <Image src={ite.get_path} width="150" height="150"onClick={()=> ProductLink(ite.id,ite.titulo)} ></Image>
+                        </Col>
+                      </Row>
+                    <Row>
+                      <Col>
+                      <p className="precio mt-1">${ite.precio}</p>
+                      <p className="titulo ">{ite.titulo}</p>
+                      </Col>
+                    </Row>
+                            <Row>
+                              <Col>
+                              <Button type="button" onClick={e => CartAdd(ite.id,ite.precio) } data-toggle="modal"  data-target="#modal" variant="outline-primary" >Agregar al carrito</Button>
+                              </Col>
+                              </Row>
                            
-                            <button type="button" onClick={e => CartAdd(ite.id,ite.precio) } data-toggle="modal"  data-target="#modal" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                            
                             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">
-  <h5 class="modal-title" id="exampleModalLabel"><img src={logo} width="150" height="30"></img></h5>
+  <h5 class="modal-title" id="exampleModalLabel"><Image src={logo} width="150" height="30"></Image></h5>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -111,13 +124,15 @@ const CartAdd = (id,precio) =>{
 </div>
 </div>
 </div>
-                </div>
+                </Col>
+              
                 )
             })}
            
-        </div>
+        </Row></center>
         <Footer cat={cat} marca={marca} CategoryLink={CategoryLink} MarcaLink={MarcaLink}/>
-        </div>
+        </Container>
     )
+debugger;
 }
 export default Marcas

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link,Switch,Redirect, } from "react-rou
 import Routing from './components/routing'
 import { CookiesProvider } from 'react-cookie'
 import  { useHistory } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const mycontext = React.createContext()
 function App() {

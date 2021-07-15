@@ -2,7 +2,7 @@ import React, {useState,useContext} from 'react'
 import {mycontext} from './../../App'
 import image from './../../images/im1.jpg'
 import logo from './../../images/LETRERO.png'
-
+import  {Container, Row, Col,Navbar,NavDropdown,Nav,Image,Button} from 'react-bootstrap' 
 function Featured(props){
     
     const {item, marcai } = useContext(mycontext)
@@ -10,22 +10,31 @@ function Featured(props){
     const [marca, setMarca] = marcai
  
     return(
-        <div className="bg-light">
-        <div className="row text-center titulos mt-2 ">
-            <div className="col-12">
+        <Container>
+        <Row className="text-center titulos mt-2">
+            <Row xs={12}>
                 <h2> Productos destacados <i class="fa fa-star icolor" aria-hidden="true"></i></h2>
-            </div>
-        </div>
+            </Row>
+        </Row>
         <center><div class="dropdown-divider in-div "></div></center>
-        <div className="row">
+        <Row>
             {items && items.filter(pr => pr.get_marc === "mundo_aseo").map(item=>{
                 if (item.destacado === true){
                     return (
-                        <div  key={item.id} className="col-lg-2 col-md-2 col-sm-12 product ml-3 mt-5 mb-5">
-                            <center><img src={item.get_path}   onClick={()=> props.ProductLink(item.id,item.titulo)} class="img-fluid mt-2 img-prods" alt="Responsive image" />
-                            <p className="precio mt-1">${item.precio}</p>
+                        <Col  key={item.id} xs={12} md={12} lg={3} className="mt-2 mb-4 text-center" >
+                          <Row>
+                            <Col><Image src={item.get_path}  width="150" height="150" onClick={()=> props.ProductLink(item.id,item.titulo)}  ></Image></Col>
+                          </Row>
+                         <Row>
+                         <p className="precio mt-1">${item.precio}</p>
                             <p className="titulo ">{item.titulo}</p>
-                            <button type="button" onClick={e => props.CartAdd(item.id,item.precio) }  data-toggle="modal"  data-target="#modal" aria-expanded="false" aria-controls="collapseExample" class="btn btn-primary btn-cart">Agregar al carrito</button></center>
+                         </Row>
+                           <Row>
+                             <Col>
+                             <Button type="button" onClick={e => props.CartAdd(item.id,item.precio) }  data-toggle="modal"  data-target="#modal" aria-expanded="false" aria-controls="collapseExample" variant="outline-primary" >Agregar al carrito</Button>
+                             </Col>
+                           </Row>
+                            
                             
                           
                             
@@ -49,15 +58,15 @@ function Featured(props){
   </div>
 </div>
 
-                            </div>
+                            </Col>
                     )
                 }
                 
             })}
            
        
-        </div>
-        </div>
+        </Row>
+        </Container>
     )
 }
 export default Featured

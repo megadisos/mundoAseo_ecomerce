@@ -7,6 +7,7 @@ import Cookies from 'universal-cookie'
 import Footer from '../home/footer'
 import  { Redirect, useHistory } from 'react-router-dom'
 import logo from './../../images/LETRERO.png'
+import  {Container, Row, Col,Navbar,NavDropdown,Nav,Image,Button} from 'react-bootstrap' 
 function Producto(props){
     useEffect(() => {
         setSelect("Envase 250 Grs")
@@ -90,25 +91,33 @@ function Producto(props){
         {items && items.filter(product => product.id == id).map(it =>{
             
                 return(
-                    <div>
-                    <div className="row mt-2 bg-light mb-5 " key={it.id}>
-                        <div className="col-12">
+                    <Container>
+                    <Row className="mt-2 bg-light mb-5 " key={it.id}>
+                        <Col className="col-12">
                             <center><h1 className="prd-name">{it.titulo}</h1></center>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                     <center><div class="dropdown-divider in-div "></div></center>
-                    <center><div className="row container mt-2 mb-5 bg-light" >
-                      <div className="col-lg-6 col-md-6 col-dm-12 img-box">
+                    <center><Row className="mt-2 mb-5 bg-light" >
+                      <Col xs={12} md={12} lg={6} className="img-box">
                       
-                        <img src={it.get_path}   className="mt-2 img-det"  />
+                        <Image src={it.get_path}  width="500" height="330" className="mt-2"  />
                       
                        
-                        </div>
-                        <div className="col-lg-6 col-md-6 col-dm-12">
-                            <h5 className="prd-name text-left mb-2">Descripcion</h5>
+                        </Col>
+                        <Col xs={12} md={12} lg={6}>
+                            <Row>
+                                <Col>
+                                <h5 className="prd-name text-center mb-2">Descripcion</h5>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
                                 <p className="prd-name text-left">{it.descripcion}</p>
-                               
-                                
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
                                 { it.opciones ?
                                  <form>
                                  <div class="form-group">
@@ -123,14 +132,24 @@ function Producto(props){
                                  </div>
                                  </form>
                                  : <br></br> }
+                                  <p className="prd-pre text-center"> ${ it.opciones ? select === "Envase 250 Grs" ? it.precio250 : select === "Envase 500 Grs" ?  it.precio500 : select === "Galon(4 litros)" ? it.precioGl :select === "Garrafa (20 litros)" ? it.precioGr: it.precio : it.precio}  </p>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                <Button type="button" onClick={e => CartAdd(it.id,it.opciones,it.precio,it.precio250,it.precio500,it.precioGl,it.precioGr) } data-toggle="modal"  data-target="#modal" variant="outline-primary">Agregar al carrito</Button>
+                                </Col>
+                            </Row>
+                                
+                               
                                
                                 
-                                <p className="prd-pre text-left"> ${ it.opciones ? select === "Envase 250 Grs" ? it.precio250 : select === "Envase 500 Grs" ?  it.precio500 : select === "Galon(4 litros)" ? it.precioGl :select === "Garrafa (20 litros)" ? it.precioGr: it.precio : it.precio}  </p>
+                               
                                                                         
                                                                         
                                                                         
                                                                         
-                                <button type="button" onClick={e => CartAdd(it.id,it.opciones,it.precio,it.precio250,it.precio500,it.precioGl,it.precioGr) } data-toggle="modal"  data-target="#modal" class="btn btn-primary bt-pos btn-cart mt-5 ">Agregar al carrito</button>
+                               
                                 
                                 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -152,9 +171,9 @@ function Producto(props){
   </div>
 </div>
                               
-                        </div>
-                    </div></center>
-                    </div>
+                        </Col>
+                    </Row></center>
+                    </Container>
                 )
         })}
         <p className="mt-5 mb-5"></p>
