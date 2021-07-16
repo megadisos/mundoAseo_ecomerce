@@ -38,7 +38,7 @@ function Header(props){
               </Col>
               <Col xs={12} md={12} lg={4} className="col-cart">
               <a href="https://www.nabtastore.com.co/admin/login/?next=/admin/"><i class="fa fa-lock mr-3" aria-hidden="true"></i></a>
-                <a href="http://www.elmundodelaseo.com.co:3000/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></a>
+                <a href="http://www.elmundodelaseo.com.co/carrito"><i class="fa fa-shopping-cart " aria-hidden="true"></i></a>
                 
               </Col>
             </Row>

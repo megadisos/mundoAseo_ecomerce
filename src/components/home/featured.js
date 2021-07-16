@@ -54,7 +54,7 @@ function Featured(props){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-cart-cont"  data-dismiss="modal">Seguir comprando</button>
-        <button type="button" onClick={e=> window.location.href = "https://www.elmundodelaseo.com/carrito" } class="btn btn-primary btn-cart-pop">Ir al carrito</button>
+        <button type="button" onClick={e=> window.location.href = "http://www.elmundodelaseo.com.co/carrito" } class="btn btn-primary btn-cart-pop">Ir al carrito</button>
       </div>
     </div>
   </div>
