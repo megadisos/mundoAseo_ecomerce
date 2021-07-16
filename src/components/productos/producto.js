@@ -108,7 +108,7 @@ function Producto(props){
                         <Col xs={12} md={12} lg={6}>
                             <Row>
                                 <Col>
-                                <h5 className="prd-name text-center mb-2">Descripcion</h5>
+                                <h5 className="prd-name text-center mb-2"> <i class="fas fa-info-circle icolor"></i> Descripcion</h5>
                                 </Col>
                             </Row>
                             <Row>
@@ -121,7 +121,7 @@ function Producto(props){
                                 { it.opciones ?
                                  <form>
                                  <div class="form-group">
-                                <label for="tamanio" className="text-left">Presentación</label>
+                                 <i class="fas fa-arrow-circle-down "></i><label for="tamanio" className="text-left"> Presentación</label>
                                 <select onChange={e => setSelect(e.target.value)} class="form-control" id="tamanio">
                                     <option>Envase 500 Grs</option>
                                     <option>Envase 800 Grs</option>
@@ -132,7 +132,7 @@ function Producto(props){
                                  </div>
                                  </form>
                                  : <br></br> }
-                                  <p className="prd-pre text-center"> ${ it.opciones ? select === "Envase 250 Grs" ? it.precio250 : select === "Envase 500 Grs" ?  it.precio500 : select === "Galon(4 litros)" ? it.precioGl :select === "Garrafa (20 litros)" ? it.precioGr: it.precio : it.precio}  </p>
+                                  <p className="prd-pre text-center "> ${ it.opciones ? select === "Envase 250 Grs" ? it.precio250 : select === "Envase 500 Grs" ?  it.precio500 : select === "Galon(4 litros)" ? it.precioGl :select === "Garrafa (20 litros)" ? it.precioGr: it.precio : it.precio}  </p>
                                 </Col>
                             </Row>
                             <Row>

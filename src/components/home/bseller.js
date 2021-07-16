@@ -15,7 +15,7 @@ function Bseller(props){
                 <h2 className="titulos"> <i class="fa fa-shopping-bag icolor" aria-hidden="true"></i> Nuestros productos</h2>
             </Col>
             </Row>
-            <center><div class="dropdown-divider in-div "></div></center>
+            <center><div class="dropdown-divider in-div "></div></center> 
             <Row className="mb-5">
             {items && items.map(item=>{
 

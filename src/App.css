@@ -6,7 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.body{
+  font-family: Bree Serif;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -93,10 +95,30 @@ Link{
   border-radius: 20px;
 }
 
-
-
-
-
+.icolor{
+  color:#b5d485;
+}
+.precio{
+  background:#61dafb;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+.cats{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+.titulo{
+  font-weight: bold;
+}
+.img-box{
+  height: 350px;
+}
+.prd-pre{
+  font-weight: bold;
+  font-size: 30px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

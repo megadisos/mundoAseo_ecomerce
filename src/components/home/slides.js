@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import fondo from './../../images/mainpub.png'
-import  {Jumbotron,Image} from 'react-bootstrap' 
+import  {Image,Container} from 'react-bootstrap' 
 function Slide(props){
     return(
-        <Jumbotron>
+        <Container fluid className="mt-2 mb-3">
             {props.publ && props.publ.filter(pb => pb.id === 1).map(pub =>{
                 return (
                     <div key={pub.id}>
@@ -13,7 +13,7 @@ function Slide(props){
                 )
             })}
   
-</Jumbotron>
+</Container>
     )
 }
 export default Slide

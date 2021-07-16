@@ -29,7 +29,7 @@ function Category(props){
               return(
                     <Col xs={12} md={12} lg={4} key={mc.id} style={styleColor}>
                         <center><Image src={mc.get_path} className="mt-3 cat-img" width="400" height="250" onClick={()=> props.CategoryLink(mc.get_name)} ></Image></center>
-                        <p className="text-center">{mc.get_name}</p>
+                        <p className="text-center cats">{mc.get_name}</p>
                     </Col>
                 )   
             })}

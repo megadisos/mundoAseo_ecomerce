@@ -11,7 +11,7 @@ function Featured(props){
  
     return(
         <Container>
-        <Row className="text-center titulos mt-2">
+        <Row className="text-center mt-2">
             <Row xs={12}>
                 <h2> Productos destacados <i class="fa fa-star icolor" aria-hidden="true"></i></h2>
             </Row>
@@ -26,8 +26,10 @@ function Featured(props){
                             <Col><Image src={item.get_path}  width="150" height="150" onClick={()=> props.ProductLink(item.id,item.titulo)}  ></Image></Col>
                           </Row>
                          <Row>
-                         <p className="precio mt-1">${item.precio}</p>
+                           <Col>
+                         <p className="precio mt-1 ">${item.precio}</p>
                             <p className="titulo ">{item.titulo}</p>
+                            </Col>
                          </Row>
                            <Row>
                              <Col>
